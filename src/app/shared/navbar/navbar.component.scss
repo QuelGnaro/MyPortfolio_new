@@ -1,0 +1,77 @@
+.nav-container {
+  width: 66%;
+  margin: auto;
+}
+
+.nav-btn {
+  background-color: #052f0d;
+  border-radius: 33px;
+  &:hover {
+    box-shadow: 0 0 5px green;
+  }
+}
+
+/* Stile del contenitore della nav */
+.nav-mobile-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Bottone circolare che apre/chiude il menu */
+.nav-toggle {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.nav-toggle:hover {
+  background-color: #4caf50;
+}
+
+/* Menu di navigazione esteso */
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 120px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 4px;
+  margin-top: 10px;
+  transition: height 0.3s ease;
+}
+
+/* Stile dei bottoni di navigazione */
+.nav-menu a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  margin: 5px 0;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 50%; /* Changed to make buttons round */
+  transition: background-color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  background-color: #1e90ff;
+  color: white;
+}
+
+/* Bottoni evidenziati quando attivi */
+.active {
+  background-color: #4caf50;
+  color: white;
+}

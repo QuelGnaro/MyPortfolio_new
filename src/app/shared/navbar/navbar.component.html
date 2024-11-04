@@ -1,0 +1,35 @@
+<nav class="nav-container" *ngIf="!isMobile">
+  <div class="d-flex justify-content-evenly">
+    <button
+      *ngFor="let section of sections"
+      class="btn nav-btn"
+      (click)="scrollToElement(section.link)"
+    >
+      {{ section.name }}
+    </button>
+  </div>
+</nav>
+<nav class="nav-mobile-container" *ngIf="isMobile">
+  <button class="nav-toggle" (click)="toggleNav()">
+    <span *ngIf="!isNavOpen">☰</span>
+    <span *ngIf="isNavOpen">×</span>
+  </button>
+
+  <div class="nav-menu" *ngIf="isNavOpen">
+    <a [routerLink]="['/home']" routerLinkActive="active" (click)="toggleNav()"
+      >x</a
+    >
+    <a [routerLink]="['/about']" routerLinkActive="active" (click)="toggleNav()"
+      >x</a
+    >
+    <a
+      [routerLink]="['/contatti']"
+      routerLinkActive="active"
+      (click)="toggleNav()"
+      >x</a
+    >
+    <a [routerLink]="['/media']" routerLinkActive="active" (click)="toggleNav()"
+      >x</a
+    >
+  </div>
+</nav>
