@@ -1,0 +1,6 @@
+@import "../../../styles/variables.scss";
+
+footer {
+  background-color: darken($primary-color, 3%);
+  color: $quaternary-color;
+}

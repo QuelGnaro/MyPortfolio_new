@@ -1,5 +1,6 @@
-import { ViewportScroller } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { PreferencesService } from '../../services/preferences.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,45 +8,78 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  //FIXME: ma serve?
+  @Output() isMobileMenuOpen = EventEmitter;
+
   sections = [
-    { link: 'home', name: 'Home' },
-    { link: 'skills', name: 'Skills' },
-    { link: 'about', name: 'About' },
-    { link: 'certificates', name: 'Certificates' },
-    { link: 'projects', name: 'Projects' },
-    { link: 'contact', name: 'Contact' },
+    { link: 'home', name: ' Home' },
+    { link: '#aboutMe', name: ' About' },
+    { link: '#projects', name: ' Projects' },
+    { link: '#experience', name: ' My Experience' },
+    { link: '#skills', name: ' Skills' },
+    { link: '#contactForm', name: ' Contact Me' }
   ];
 
+  contactMe = { link: '#contactForm', name: 'Contact Me' };
+
+  buttons = [
+    { name: 'lenguage', icon: 'language', items: [{ en: 'en' }, { it: 'it' }] },
+    { name: 'theme color', icon: 'color_lens', items: [{ light: 'light' }, { dark: 'dark' }] }
+  ];
+
+
   isMobile: boolean = false;
-  isNavOpen = false;
+  isMenuOpen: boolean = false;
 
-
-  constructor(private viewportScroller: ViewportScroller) { }
-
-  scrollToElement(elementId: string): void {
-    this.viewportScroller.scrollToAnchor(elementId);
+  constructor(
+    private router: Router,
+    private preveferencesService: PreferencesService
+  ) {
   }
 
-  onResize(): void {
-    if (window.innerWidth <= 1117) {
-      this.isMobile = true;
+  get theme() {
+    const theme = this.preveferencesService.getTheme();
+    if (theme === 'dark') {
+      return 'dark-btn';
     } else {
-      this.isMobile = false;
+      return 'light-btn';
     }
   }
 
+  onResize(): void {
+    this.isMobile = window.innerWidth <= 991;
+  }
+
+  // TODO: sistemare per burger menu
   ngOnInit(): void {
-    this.onResize(); // Call the onResize method when the component is initialized
-    window.addEventListener('resize', this.onResize.bind(this)); // Add event listener for window resize
+    this.onResize();
+    window.addEventListener('resize', this.onResize.bind(this));
   }
 
   ngOnDestroy(): void {
-    window.removeEventListener('resize', this.onResize.bind(this)); // Remove event listener when the component is destroyed
+    window.removeEventListener('resize', this.onResize.bind(this));
   }
-
 
   // Funzione per aprire/chiudere il menu
-  toggleNav(): void {
-    this.isNavOpen = !this.isNavOpen;
+
+  onToggleSidebar(): void {
+    this.isMenuOpen = !this.isMenuOpen;
   }
+
+  stopPropagation(event: Event): void {
+    event.stopPropagation();
+  }
+
+  navigateTo(item: string) {
+    if (item) {
+      this.router.navigateByUrl(item);
+      this.isMenuOpen = false;
+    }
+    return;
+  }
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
 }

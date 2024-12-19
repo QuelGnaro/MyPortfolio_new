@@ -1,77 +1,48 @@
-.nav-container {
-  width: 66%;
-  margin: auto;
+@import "../../../styles/variables.scss";
+
+//to remove the border of the navbar-toggler
+.navbar {
+  --bs-navbar-toggler-border-color: none !important;
+  --bs-navbar-toggler-focus-width: none !important;
 }
 
-.nav-btn {
-  background-color: #052f0d;
-  border-radius: 33px;
+.closing-button {
+  position: fixed;
+  right: 12px;
+  top: 25px;
+}
+
+.offcanvas-header {
+  background-color: $secondary-color !important;
+}
+
+.btn-close {
+  padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x) !important;
+  width: 1.5em !important;
+  height: 1.5em !important;
+}
+
+.custom-item {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  color: white;
+
   &:hover {
-    box-shadow: 0 0 5px green;
+    background-color: white;
+    color: $primary-color;
+    text-decoration: underline;
   }
 }
 
-/* Stile del contenitore della nav */
-.nav-mobile-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
+li {
+  font-size: 20px;
+  font-weight: 500;
 }
 
-/* Bottone circolare che apre/chiude il menu */
-.nav-toggle {
-  background-color: #1e90ff;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 30px;
-  cursor: pointer;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-
-.nav-toggle:hover {
-  background-color: #4caf50;
-}
-
-/* Menu di navigazione esteso */
-.nav-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 120px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  padding: 4px;
-  margin-top: 10px;
-  transition: height 0.3s ease;
-}
-
-/* Stile dei bottoni di navigazione */
-.nav-menu a {
-  display: block;
-  text-decoration: none;
-  color: #333;
-  background-color: #f0f0f0;
-  padding: 10px 20px;
-  margin: 5px 0;
-  width: 60px;
-  height: 60px;
-  text-align: center;
-  border-radius: 50%; /* Changed to make buttons round */
-  transition: background-color 0.3s ease;
-}
-
-.nav-menu a:hover {
-  background-color: #1e90ff;
-  color: white;
-}
-
-/* Bottoni evidenziati quando attivi */
-.active {
-  background-color: #4caf50;
-  color: white;
+.gradient {
+  background: linear-gradient(to bottom, $secondary-color, $primary-color);
 }

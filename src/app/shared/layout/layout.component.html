@@ -1,7 +1,9 @@
 <div class="main-container">
-  <div class="main pt-4">
-    <app-navbar></app-navbar>
+  <app-navbar></app-navbar>
+  <div class="container">
     <router-outlet></router-outlet>
+    <app-scroll-to-top-button></app-scroll-to-top-button>
+    <app-settings-button></app-settings-button>
   </div>
-  <app-scroll-to-top-button></app-scroll-to-top-button>
+  <app-footer></app-footer>
 </div>

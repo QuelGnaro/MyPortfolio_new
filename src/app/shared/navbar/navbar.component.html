@@ -1,35 +1,153 @@
-<nav class="nav-container" *ngIf="!isMobile">
-  <div class="d-flex justify-content-evenly">
+<!-- <nav
+  class="navbar navbar-expand-md fixed-top"
+  [ngClass]="{
+    'nav-bar-dark': theme === 'dark-btn',
+    'nav-bar-light': theme === 'light-btn'
+  }"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="assets/quel gnaro.png"
+        alt=""
+        style="width: 80px"
+        (click)="navigateTo('/home')"
+      />
+    </a>
     <button
-      *ngFor="let section of sections"
-      class="btn nav-btn"
-      (click)="scrollToElement(section.link)"
+      class="btn burger-button"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
+      aria-label="Toggle navigation"
+      [ngClass]="{
+        'burger-dark-btn': theme === 'dark-btn',
+        'burger-light-btn': theme === 'light-btn'
+      }"
     >
-      {{ section.name }}
+      <fa-icon [icon]="['fas', 'bars']" class="b-icon"></fa-icon>
     </button>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <a class="navbar-brand" href="#">
+          <img
+            src="assets/quel gnaro.png"
+            alt=""
+            style="width: 80px"
+            (click)="navigateTo('/home')"
+        /></a>
+        <button
+          class="btn burger-button"
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+          [ngClass]="{
+            'burger-dark-btn': theme === 'dark-btn',
+            'burger-light-btn': theme === 'light-btn'
+          }"
+        >
+          <fa-icon
+            [icon]="['fas', 'x']"
+            class="b-icon"
+            *ngIf="isMenuOpen"
+          ></fa-icon>
+        </button>
+      </div>
+      <div class="offcanvas-body gradient" [ngClass]="{ gradient: isMobile }">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li
+            class="nav-item my-1"
+            *ngFor="let item of sections"
+            (click)="navigateTo(item.link)"
+            [ngClass]="{
+              'nav-bar-dark': theme === 'dark-btn',
+              'nav-bar-light': theme === 'light-btn',
+            }"
+          >
+            <a
+              aria-current="page"
+              aria-label="Close"
+              data-bs-dismiss="offcanvas"
+              [ngClass]="{
+                dark: theme === 'dark-btn',
+                light: theme === 'light-btn',
+                'is-open': isMenuOpen
+              }"
+            >
+              {{ item.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-</nav>
-<nav class="nav-mobile-container" *ngIf="isMobile">
-  <button class="nav-toggle" (click)="toggleNav()">
-    <span *ngIf="!isNavOpen">☰</span>
-    <span *ngIf="isNavOpen">×</span>
-  </button>
-
-  <div class="nav-menu" *ngIf="isNavOpen">
-    <a [routerLink]="['/home']" routerLinkActive="active" (click)="toggleNav()"
-      >x</a
+</nav> -->
+<nav class="navbar gradient navbar-expand-md fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        style="width: 50px; height: 50px"
+        src="assets/quel gnaro.png"
+        alt="logo"
+        routerLink="/home"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
+      aria-label="Toggle navigation"
     >
-    <a [routerLink]="['/about']" routerLinkActive="active" (click)="toggleNav()"
-      >x</a
+      <fa-icon [icon]="['fas', 'bars']" style="color: white"></fa-icon>
+    </button>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
     >
-    <a
-      [routerLink]="['/contatti']"
-      routerLinkActive="active"
-      (click)="toggleNav()"
-      >x</a
-    >
-    <a [routerLink]="['/media']" routerLinkActive="active" (click)="toggleNav()"
-      >x</a
-    >
+      <div class="offcanvas-header">
+        <a class="navbar-brand" href="#">
+          <img
+            style="width: 50px; height: 50px"
+            src="assets/quel gnaro.png"
+            alt="logo"
+            routerLink="/home"
+        /></a>
+        <button
+          class="navbar-toggler closing-button"
+          type="button"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        >
+          <fa-icon [icon]="['fas', 'x']" style="color: white"></fa-icon>
+        </button>
+      </div>
+      <div class="offcanvas-body gradient" [ngClass]="{ gradient: isMobile }">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li
+            class="nav-item m-1 custom-item"
+            *ngFor="let item of sections"
+            (click)="navigateTo(item.link)"
+          >
+            <a
+              aria-current="page"
+              aria-label="Close"
+              data-bs-dismiss="offcanvas"
+            >
+              {{ item.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </nav>
