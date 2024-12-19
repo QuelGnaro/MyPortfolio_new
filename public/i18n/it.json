@@ -1,0 +1,24 @@
+{
+  "intro": {
+    "hello": "Ciao",
+    "i_am": "Sono",
+    "description": "Curo interfacce moderne, responsive e intuitive, combinando design, accessibilità e tecnologie web avanzate.",
+    "talk": "Parliamo!"
+  },
+
+  "about_me": "Originario di Calvisano (Brescia), ho oltre 7 anni di esperienza nel settore retail, di cui 5 come store manager e 2 in ambito commerciale, sviluppando competenze in leadership, gestione del cliente B2B/B2C e organizzazione. Nel 2023 ho deciso di dedicarmi al web development, completando un corso per front-end developer presso la 24Ore Business School, con competenze in HTML, CSS, JavaScript, TypeScript, Angular e Ionic. Ora risiedo in provincia di Monza, pronto ad affrontare nuove sfide nel campo dello sviluppo web.",
+
+  "experience": {
+    "moi_2024": "Ho contribuito allo sviluppo di un’applicazione web migliorandone logica e interfaccia utente. Ho progettato una nuova interfaccia per la gestione dei DDT, integrato API del back end, implementato l’SDK Dynamsoft per la scansione documenti e utilizzato AG Grid per tabelle dinamiche. Il lavoro si è svolto in ambiente Docker.",
+    "more_sales": "Mi sono occupato della ricerca di nuovi clienti, del mantenimento delle relazioni con quelli esistenti e della preparazione e aggiornamento dei listini di vendita. Ho lavorato per raggiungere obiettivi di vendita e supportato le attività di back office.",
+    "more_store_manager": "Responsabile della gestione e apertura di due punti vendita MoreCover presso La Rinascente di Milano e Roma. Ho supervisionato due team di 4 persone, occupandomi di reclutamento, selezione, formazione e orientamento del personale. Ho lavorato per il raggiungimento dei KPI di vendita e curato la manutenzione delle stampanti UV."
+  },
+
+  "projects": {
+    "moneychanger_description": "Moneychanger è un'app web che ti permette di convertire tra diverse valute. È un'applicazione web responsive costruita con Angular, in un ambiente Docker."
+  },
+  "footer": {
+    "title": "Disponibile per opportunità di lavoro freelance",
+    "message": "Hai un progetto interessante di cui hai bisogno di aiuto? Inviami un'email o contattami tramite messaggio istantaneo!"
+  }
+}

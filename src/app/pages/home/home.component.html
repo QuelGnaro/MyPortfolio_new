@@ -1,23 +1,290 @@
-<section class="intro">
-  <div class="image-container">
+<section>
+  <div
+    id="home"
+    class="d-flex flex-wrap justify-content-center px-5 align-items-center gap-3"
+  >
     <img
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTnayXzvYqlR0z4I5vTcnW0zDLnm4Uf_itYg&s"
+      src="/assets/foto.png"
       alt="profile_image"
-      class="profile-image"
+      class="col-3 profile-image"
     />
-    <h1>I'm Lorenzo Baratti</h1>
-    <h3>Front-end Web Developer</h3>
-    <div>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus,
-        sapiente dolorum assumenda autem expedita optio architecto sit atque.
-        Aperiam, obcaecati? Molestiae ipsam corrupti ipsa expedita? Nobis,
-        ducimus. Quibusdam, dignissimos iusto.
+    <div class="col-md-5 col-sm-10 d-flex flex-column glass-card">
+      <h1>
+        {{ "intro.hello" | translate }} <span style="display: block"></span>
+        {{ "intro.i_am" | translate }}
+        <span style="color: blue"> Lorenzo</span>,
+        <span style="display: block"> </span>Software Engineer, Front end & App
+        Developer
+      </h1>
+      <p class="mt-3">
+        {{ "intro.description" | translate }}
       </p>
-      <div class="btn-cta">
-        <button class="btn btn-primary">learn more</button>
-        <button class="btn btn-primary">contact me</button>
+      <p
+        class="mt-3 talk"
+        (click)="goToContact('/home#contactForm')"
+        style="text-decoration: underline; color: blue; cursor: pointer"
+      >
+        {{ "intro.talk" | translate }}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ! about me -->
+<section class="p-5">
+  <div class="d-flex flex-row justify-content-center">
+    <div style="width: fit-content; padding: 20px" class="custom-border">
+      <h1 id="aboutMe">About Me</h1>
+    </div>
+  </div>
+
+  <div class="mt-5 about-container">
+    <div class="glass-card col">
+      <p>
+        {{ "about_me" | translate }}
+      </p>
+    </div>
+    <div class="col-12 col-md-6">
+      <img
+        src="https://www.holycode.com/wp-content/uploads/2023/07/developer-looking-at-code-1.jpg"
+        alt=""
+        style="width: 100%; border-radius: 8px"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- ! projects -->
+<section class="px-5">
+  <div class="d-flex flex-row justify-content-center">
+    <div style="width: fit-content; padding: 20px" class="custom-border">
+      <h1 id="projects">Projects</h1>
+    </div>
+  </div>
+
+  <div class="bento-container mt-5">
+    <div
+      class="bento-item scroll"
+      *ngFor="let item of projects; let i = index"
+      [ngClass]="item.class"
+    >
+      <img [src]="item.img" style="width: 100%" [alt]="item.titolo" />
+      <div class="overlay-bento">
+        <!-- <h3>{{ item.titolo }}</h3> -->
+        <!-- <p>{{ item.descrizione }}</p> -->
+        <!-- <a [href]="item.link">Scopri di più</a> -->
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ! professional experience -->
+<section class="p-5">
+  <div class="d-flex flex-row justify-content-center">
+    <div
+      style="width: fit-content; padding: 20px"
+      class="custom-border text-center"
+    >
+      <h1 id="experience">Professional</h1>
+      <h1>experience</h1>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <div *ngFor="let section of experiences; let i = index" class="accordion">
+      <div class="accordion-header" (click)="toggleAccordion(i)">
+        <h6>{{ section.role }} &#64; {{ section.company }}</h6>
+        <div class="period">
+          <h6>{{ section.period }}</h6>
+          <span class="arrow" [class.expanded]="isAccordionOpen(i)"
+            >&#9660;</span
+          >
+        </div>
+      </div>
+      <div class="accordion-content" [class.open]="isAccordionOpen(i)">
+        <div class="content">
+          <div class="left">
+            <p>
+              <fa-icon
+                class="jobs-icon"
+                [icon]="['fas', 'location-dot']"
+              ></fa-icon
+              >{{ section.location }}
+
+              <fa-icon
+                class="jobs-icon"
+                style="margin-left: 30px"
+                [icon]="['fas', section.modeIcon]"
+              ></fa-icon
+              >{{ section.mode }}
+            </p>
+
+            {{ section.description | translate }}
+            <div class="pill-container">
+              <div class="pill mx-2" *ngFor="let item of section.pills">
+                <small>{{ item }}</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="right">
+            <div *ngIf="theme == 'dark' && section.logos?.logo == ''">
+              <img
+                [src]="section.logos.lightLogo"
+                alt=""
+                style="max-width: 90px"
+              />
+            </div>
+            <div *ngIf="theme == 'light' && section.logos?.logo == ''">
+              <img
+                [src]="section.logos.darkLogo"
+                alt=""
+                style="max-width: 90px"
+              />
+            </div>
+            <div *ngIf="section.logos?.logo != ''">
+              <img [src]="section.logos.logo" alt="" style="max-width: 90px" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ! skills -->
+<section class="px-5">
+  <div class="d-flex flex-row justify-content-center">
+    <div style="padding: 20px" class="custom-border text-center">
+      <h1 id="skills">Skills</h1>
+    </div>
+  </div>
+  <div class="d-flex flex-wrap justify-content-start">
+    <div class="mt-5 slideInLeft">
+      <h3>Now using:</h3>
+      <div class="skills-container glass-card">
+        <div class="svg-container p-3" *ngFor="let item of curentSkills">
+          <img [src]="item.url" alt="" style="width: 108px; height: 108px" />
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 slideInRight">
+      <h3>Learning:</h3>
+      <div class="skills-container glass-card">
+        <div class="svg-container p-3" *ngFor="let item of learningSkills">
+          <img [src]="item.url" alt="" style="width: 108px; height: 108px" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ! contact -->
+
+<section class="p-5">
+  <div class="d-flex flex-row justify-content-center">
+    <div style="width: fit-content; padding: 20px" class="custom-border">
+      <h1 id="contactForm">Contact</h1>
+    </div>
+  </div>
+  <div id="customerForm" class="mt-5">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div
+        class="d-flex flex-column justify-content-center align-items-center glass-card mt-3"
+      >
+        <div
+          *ngFor="let field of fields; let i = index"
+          class="col-sm-8 col-md-8 my-3"
+        >
+          <ng-container *ngIf="isTextField(field)">
+            <!-- ! custom input field -->
+            <div class="form__group">
+              <input
+                [type]="field.type"
+                class="form__field"
+                [placeholder]="field.placeholder"
+                [id]="field.name"
+                [formControlName]="field.name"
+                required
+              />
+              <label class="form__label">{{ field.label }}</label>
+            </div>
+
+            <!-- ! form error messages -->
+            <div
+              *ngIf="
+                form.get(field.name)?.invalid && form.get(field.name)?.touched
+              "
+            >
+              <small *ngIf="form.get(field.name)?.errors?.['required']"
+                >Questo campo è obbligatorio.</small
+              >
+              <small *ngIf="form.get(field.name)?.errors?.['email']"
+                >Email non valida.</small
+              >
+              <small *ngIf="form.get(field.name)?.errors?.['min']"
+                >Valore troppo basso.</small
+              >
+            </div>
+          </ng-container>
+
+          <!-- ! textarea -->
+          <ng-container *ngIf="isTextareaField(field)">
+            <div class="form__group">
+              <textarea
+                class="form__field"
+                [formControlName]="field.name"
+                [maxlength]="field.maxLength!"
+              ></textarea>
+
+              <div id="charCounter" class="counter">
+                {{ textCounter }} / 300
+              </div>
+              <label class="form__label">{{ field.label }}</label>
+            </div>
+          </ng-container>
+
+          <!-- !radio -->
+          <ng-container
+            class="row d-flex justify-content-center"
+            *ngIf="isRadioField(field)"
+          >
+            <div class="col-4">
+              <label [for]="field.name">{{ field.label }}</label>
+              <div class="form-check" *ngFor="let option of field.options">
+                <label class="form-check-label">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    [formControlName]="field.name"
+                    [value]="option.value"
+                    [checked]="form.get(field.name)?.value === option.value"
+                  />
+                  {{ option.label }}
+                </label>
+              </div>
+            </div>
+          </ng-container>
+
+          <!-- ! checkbox -->
+          <ng-container *ngIf="isCheckboxField(field)">
+            <label>
+              <input type="checkbox" [formControlName]="field.name" />
+              {{ field.label }}
+            </label>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <button
+          type="submit"
+          [disabled]="form.invalid"
+          class="custom-button mt-3"
+        >
+          Invia
+        </button>
+      </div>
+    </form>
   </div>
 </section>

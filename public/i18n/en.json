@@ -1,0 +1,23 @@
+{
+  "intro": {
+    "hello": "Hello",
+    "i_am": "I am",
+    "description": "I design modern, responsive, and intuitive interfaces, combining accessibility, usability, and advanced web technologies.",
+    "talk": "Let's talk!"
+  },
+  "about_me": "Originally from Calvisano (Brescia), I have over 7 years of experience in the retail industry, including 5 years as a store manager and 2 years in sales, developing skills in leadership, B2B/B2C customer management, and organization. In 2023, I decided to pursue web development and completed a front-end developer course at 24Ore Business School, with expertise in HTML, CSS, JavaScript, TypeScript, Angular, and Ionic. I now reside in the province of Monza, ready to take on new challenges in the field of web development.",
+
+  "experience": {
+    "moi_2024": "Contributed to the development of a web application by improving its logic and user interface. Designed a new interface for managing delivery notes, integrated back-end APIs, implemented the Dynamsoft SDK for document scanning, and used AG Grid for dynamic tables. The work was carried out in a Docker environment.",
+    "more_sales": "Managed client acquisition and maintained relationships with existing customers. Prepared and updated sales price lists, achieved sales targets, and supported back-office activities.",
+    "more_store_manager": "Managed the setup and operation of two MoreCover stores at La Rinascente in Milan and Rome. Supervised two teams of 4 members, handling recruitment, selection, training, and onboarding of new employees. Achieved sales KPIs and ensured UV printer maintenance."
+  },
+
+  "projects": {
+    "moneychanger_description": "Moneychanger is a web app that allows you to convert between different currencies. It is a responsive web application built with Angular, in a Docker environment."
+  },
+  "footer": {
+    "title": "Available for freelance opportunities",
+    "message": "Have an exciting project you need help with? Send me an email or contact me via instant message!"
+  }
+}

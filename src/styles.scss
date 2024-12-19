@@ -2,7 +2,84 @@
 
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
+@import "styles/variables.scss";
 
-body {
-  background-color: #0f063d;
+@keyframes scroll {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(+100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.to-top-cta:hover {
+  animation: bounce 0.8s infinite linear;
+}
+
+.slideInLeft {
+  animation: slideInLeft 1s linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 30%;
+}
+.slideInRight {
+  animation: slideInRight 1s linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 30%;
+}
+
+.scroll {
+  animation: scroll linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 30%;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu Mono", monospace;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.dark {
+  background-color: $primary-color;
+  color: $quaternary-color;
+}
+
+.light {
+  background-color: $quaternary-color;
+  color: $primary-color;
 }
