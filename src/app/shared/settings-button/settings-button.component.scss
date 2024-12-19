@@ -1,0 +1,132 @@
+@import "../../../styles/variables.scss";
+
+#floating-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $tertiary-color;
+  color: $primary-color;
+  transition: background-color 0.3s ease;
+  border: 3px solid $secondary-color;
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: $primary-color;
+    color: $quaternary-color;
+  }
+  &:active {
+    background-color: $primary-color;
+    color: $quaternary-color;
+  }
+}
+
+.gear {
+  position: absolute;
+  top: 0;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 29px;
+}
+
+#container-floating {
+  position: fixed;
+  width: max-content;
+  height: max-content;
+  bottom: 50%;
+  right: 20px;
+  z-index: 50px;
+}
+
+#container-floating:hover {
+  height: 180px;
+  width: max-content;
+  padding: 30px;
+}
+
+.nds {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 300;
+  transform: scale(0);
+  cursor: pointer;
+}
+
+.nd3 {
+  right: 25px;
+  top: calc(50% - 120px);
+  animation-delay: 0.15s;
+  animation: bounce-out-nds 0.15s linear;
+  animation-fill-mode: forwards;
+}
+
+.nd4 {
+  right: 25px;
+  top: calc(50% - 60px);
+  animation-delay: 0.1s;
+  animation: bounce-out-nds 0.1s linear;
+  animation-fill-mode: forwards;
+  &.dark {
+    background-color: $primary-color;
+    color: $quaternary-color;
+  }
+  &.light {
+    background-color: $quaternary-color;
+    color: $primary-color;
+  }
+}
+
+@keyframes bounce-nds {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-out-nds {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+#container-floating:hover .nds {
+  animation: bounce-nds 0.1s linear;
+  animation-fill-mode: forwards;
+}
+
+#container-floating:hover .nd3 {
+  animation-delay: 0.08s;
+}
+#container-floating:hover .nd4 {
+  animation-delay: 0.15s;
+}
+#container-floating:hover .nd5 {
+  animation-delay: 0.2s;
+}
+
+.icon {
+  position: absolute;
+  font-size: 28px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+}

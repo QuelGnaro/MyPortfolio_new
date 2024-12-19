@@ -1,0 +1,24 @@
+<div id="container-floating" [ngClass]="{ close: isMobileMenuOpen }">
+  <div class="nd4 nds" (click)="toggleTheme()">
+    <fa-icon class="icon" [icon]="['fas', 'circle-half-stroke']"></fa-icon>
+  </div>
+
+  <div class="nd3 nds" (click)="toggleLanguage()">
+    <img
+      src="https://freesvg.org/img/1529054003.png"
+      alt=""
+      *ngIf="currentLanguage == 'it'"
+      class="nds"
+    />
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/United-kingdom_flag_icon_round.svg/512px-United-kingdom_flag_icon_round.svg.png"
+      *ngIf="currentLanguage == 'en'"
+      alt=""
+      class="nds"
+    />
+  </div>
+
+  <div id="floating-button">
+    <p class="gear">⚙️</p>
+  </div>
+</div>
