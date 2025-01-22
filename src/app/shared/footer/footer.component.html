@@ -43,6 +43,7 @@
                 <!-- printing just the email -->
                 <span *ngIf="!item.url">{{ item.name }} </span>
                 <fa-icon
+                  *ngIf="!item.url"
                   type="button"
                   #tooltip="ngbTooltip"
                   [ngbTooltip]="copyTitle"
