@@ -1,17 +1,25 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { environment } from '../environment/environment';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { from, Observable } from 'rxjs';
+import firebase from 'firebase/app'; // Import the firebase package
+import 'firebase/firestore'; // Import the firestore module
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactUsService {
+  constructor(private firestore: AngularFirestore) { }
 
-  apiUrl = environment.apiUrl;
-  constructor(private http: HttpClient) { }
+  // Metodo per salvare i dati del form
 
-  sendEmail(data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/submit`, data);
+  saveContact(contactData: any): Observable<any> {
+    //todo: aggiungere un modo per ottenere timestamp
+    // const dataWithTimestamp = {
+    //   ...contactData, // Include i dati del form
+    //   createdAt: firebase.firestore.FieldValue.serverTimestamp() // Use firebase.firestore.FieldValue
+    // };
+    return from(this.firestore.collection('contacts').add(contactData));
   }
 }
+
+

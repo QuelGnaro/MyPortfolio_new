@@ -14,10 +14,34 @@
   },
 
   "projects": {
-    "moneychanger_description": "Moneychanger is a web app that allows you to convert between different currencies. It is a responsive web application built with Angular, in a Docker environment."
+    "moneychanger_description": "Moneychanger is a web app that allows you to convert between different currencies. It is a responsive web application built with Angular, in a Docker environment.",
+    "money-tracker": {
+      "description": "Money Tracker is a mobile application designed to help you manage your finances in a simple and effective way. The project was born from my personal need to better organize daily expenses, a need that led me to first test various existing apps and then develop my own using my front-end developer skills in Angular.",
+      "techs": "The technology used for Money Tracker includes the Ionic framework with Capacitor for cross-platform development and Chart.js for displaying data in intuitive and easy-to-understand charts.",
+      "features": {
+        "1": "Expense tracking: You can record your expenses and categorize them in an organized way, to always have a clear overview of your finances.",
+        "2": "Data visualization: Expenses are represented through simple and interactive charts, to allow for quick and accurate analysis.",
+        "3": "Family group management: With a login-based authentication system, you can create shared groups to monitor family expenses. This functionality includes:"
+      },
+      "subfeatures": {
+        "sub3.1": "Expense splitting among group members.",
+        "sub3.2": "Management of debts between members, with automatic calculations to balance accounts."
+      }
+    },
+    "money-tracker_end": "Lo scopo di Money Tracker è semplificare la gestione finanziaria sia individuale che condivisa, rendendola accessibile e visivamente comprensibile per tutti."
   },
+
   "footer": {
     "title": "Available for freelance opportunities",
-    "message": "Have an exciting project you need help with? Send me an email or contact me via instant message!"
+    "message": "Have an exciting project you need help with? Send me an email or contact me via instant message!",
+    "copy": "E-mail copied!"
+  },
+  "form": {
+    "invalid": "This field is required",
+    "invalid-email": "Please enter a valid email address",
+    "min": "Value is too low",
+    "privacy1": "I accept the terms and",
+    "privacy2": " conditions (GDPR)",
+    "privacy3": "and to be contacted by Lorenzo Baratti or his assistants."
   }
 }

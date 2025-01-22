@@ -9,16 +9,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SkillsModalComponent } from './skills-modal/skills-modal.component';
 import { SettingsButtonComponent } from './settings-button/settings-button.component';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const sharedModules = [
   CommonModule, RouterModule, ReactiveFormsModule, FormsModule, FontAwesomeModule,
-  TranslateModule,
-
+  TranslateModule, NgbTooltipModule
 ];
 
 @NgModule({
@@ -27,7 +25,6 @@ const sharedModules = [
     NavbarComponent,
     FooterComponent,
     ScrollToTopButtonComponent,
-    SkillsModalComponent,
     SettingsButtonComponent,
   ],
   imports: [

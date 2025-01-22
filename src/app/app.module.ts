@@ -7,6 +7,11 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from './environment/environment.prod';
+
+
 
 
 // Funzione per il caricamento dei file di traduzione
@@ -23,6 +28,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     NgbModule,
     SharedModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi()),
   importProvidersFrom(

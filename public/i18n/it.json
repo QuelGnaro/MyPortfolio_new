@@ -15,10 +15,33 @@
   },
 
   "projects": {
-    "moneychanger_description": "Moneychanger è un'app web che ti permette di convertire tra diverse valute. È un'applicazione web responsive costruita con Angular, in un ambiente Docker."
+    "moneychanger_description": "Moneychanger è un'app web che ti permette di convertire tra diverse valute. È un'applicazione web responsive costruita con Angular, in un ambiente Docker.",
+    "money-tracker": {
+      "description": "Money Tracker è un’applicazione mobile progettata per aiutarti a gestire le tue finanze in modo semplice ed efficace. Il progetto è nato dalla mia esigenza personale di organizzare meglio le spese quotidiane, esigenza che mi ha portato prima a testare varie app già disponibili e successivamente a svilupparne una mia utilizzando le competenze da sviluppatore front-end in Angular.",
+      "techs": "La tecnologia utilizzata per Money Tracker include il framework Ionic con Capacitor per lo sviluppo multipiattaforma e Chart.js per visualizzare i dati in grafici intuitivi e facili da comprendere.",
+      "features": {
+        "1": "Tracciamento delle spese: Puoi registrare le tue uscite e categorizzarle in modo ordinato, per avere sempre una panoramica chiara delle tue finanze.",
+        "2": "Visualizzazione dei dati: Le spese sono rappresentate tramite grafici semplici e interattivi, per consentire un’analisi rapida e precisa.",
+        "3": "Gestione dei gruppi famiglia: Grazie a un sistema di autenticazione con login, puoi creare gruppi condivisi per monitorare le spese familiari. Questa funzionalità include:"
+      },
+      "subfeatures": {
+        "sub3.1": "Suddivisione delle spese tra i membri del gruppo.",
+        "sub3.2": "Gestione di eventuali debiti tra i membri, con calcoli automatici per bilanciare i conti."
+      },
+      "money-tracker_end": "Lo scopo di Money Tracker è semplificare la gestione finanziaria sia individuale che condivisa, rendendola accessibile e visivamente comprensibile per tutti."
+    }
   },
   "footer": {
     "title": "Disponibile per opportunità di lavoro freelance",
-    "message": "Hai un progetto interessante di cui hai bisogno di aiuto? Inviami un'email o contattami tramite messaggio istantaneo!"
+    "message": "Hai bisogno di aiuto col tuo progetto? Inviami un'email o contattami tramite il form!",
+    "copy": "E-mail copiata!"
+  },
+  "form": {
+    "invalid": "Il campo è obbligatorio",
+    "invalid-email": "Inserisci un indirizzo email valido",
+    "min": "Valore troppo basso",
+    "privacy1": "Accetto termini e",
+    "privacy2": " condizioni (GDPR)",
+    "privacy3": " e di essere ricontattato da Lorenzo Baratti o da suoi assistenti."
   }
 }
