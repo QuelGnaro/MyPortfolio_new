@@ -1,5 +1,6 @@
 export interface ISkill {
   name: string;
   url: string;
-  description: string;
+  docUrl?: string;
+  description?: string;
 }

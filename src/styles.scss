@@ -18,17 +18,21 @@
 @keyframes slideInLeft {
   from {
     transform: translateX(-100%);
+    opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 @keyframes slideInRight {
   from {
     transform: translateX(+100%);
+    opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -57,14 +61,26 @@
   animation-range: entry 0 cover 30%;
 }
 
+.quickslideInLeft {
+  animation: slideInLeft 700ms linear;
+}
+
+.quickslideInRight {
+  animation: slideInRight 700ms linear;
+}
+
 .scroll {
   animation: scroll linear;
   animation-timeline: view();
   animation-range: entry 0 cover 30%;
 }
 
-body,
+body {
+  height: 100%;
+}
+
 html {
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   font-family: "Ubuntu Mono", monospace;

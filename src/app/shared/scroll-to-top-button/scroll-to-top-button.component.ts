@@ -8,11 +8,11 @@ import { Component, HostListener } from '@angular/core';
 export class ScrollToTopButtonComponent {
   isVisible: boolean = false;
 
-  @HostListener('window:scroll', [])
 
-  onWindowScroll(): void {
-    const yOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    this.isVisible = yOffset > 300; // Mostra il bottone se lo scroll è superiore a 20px
+  @HostListener('window:scroll')
+
+  onWindowScroll() {
+    this.isVisible = window.scrollY > 300;
   }
 
   scrollToTop(): void {

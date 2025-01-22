@@ -1,7 +1,11 @@
+import { ISkill } from "./skill.interface";
+
 export interface IProject {
-  titolo: string;
-  descrizione: string;
-  img: string;
+  title: string;
+  techsIcons: ISkill[];
+  name: string;
+  img: string[];
   link: string;
   class: string;
+  url: string;
 }

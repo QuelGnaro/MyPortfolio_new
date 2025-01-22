@@ -1,8 +1,17 @@
 @import "../../../styles/variables.scss";
 
 .main-container {
-  height: 100vh;
   width: 100%;
   margin-top: 90px;
   // padding: 2% 0;
+}
+
+.dark {
+  background-color: $primary-color;
+  color: $quaternary-color;
+}
+
+.light {
+  background-color: $quaternary-color;
+  color: $primary-color;
 }
