@@ -16,17 +16,23 @@ import { ISkill } from '../../models/interfaces/skill.interface';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
+  modalTitle: string = '';
+  modalMessage: string = '';
+  isModalOpen: boolean = false;
   openSectionIndex: number | null = null;
 
-  // ! è sufficiente aggiungere un campo al formFields per aggiungere un campo al form, basta seguire la struttura dell'interfaccia IField
+  // ! (deprecated To add a field to the form, simply add a new object to the 'fields' array following the structure of the IField interface.  now I use my dynamic form via json
+
   form: FormGroup;
   fields: IField[] = [
+    { label: 'Data', name: 'date', type: 'date', placeholder: 'Inserisci la data' },
     { label: 'Nome', name: 'name', type: 'text', placeholder: 'Inserisci il tuo nome', validators: [Validators.required] },
     { label: 'Cognome', name: 'surname', type: 'text', placeholder: 'Inserisci il tuo cognome', validators: [Validators.required] },
     { label: 'Email', name: 'email', type: 'email', placeholder: 'Inserisci la tua email', validators: [Validators.required, Validators.email] },
     { label: 'Telefono', name: 'phone', type: 'tel', placeholder: 'Inserisci il tuo numero di telefono', validators: [Validators.required] },
     { label: 'Messaggio', name: 'message', type: 'textarea', placeholder: 'Mi interesserebbe saperne di più su . . .', maxLength: 300, validators: [Validators.maxLength(300)] },
+    { label: 'Privacy & Policy', name: 'privacy', type: 'checkbox', validators: [Validators.required] },
+
   ];
 
   projects: IProject[] = [];
@@ -40,7 +46,8 @@ export class HomeComponent {
     private router: Router,
     private preferencesService: PreferencesService,
     private projectsService: ProjectsService,
-    private experienceService: ExperiencesService
+    private experienceService: ExperiencesService,
+
   ) {
     this.form = this.fb.group({});
   }
@@ -103,23 +110,29 @@ export class HomeComponent {
     });
   };
 
-
-
   onSubmit() {
     if (this.form.valid) {
-      this.contactUsService.sendEmail(this.form.value).subscribe({
-        next: () => {
-          alert('Messaggio inviato correttamente');
-          this.form.reset();
-        },
-        error: (err) => {
-          alert('Errore nell\'invio del messaggio');
-          console.log(err);
-        }
-      });
+      this.contactUsService
+        .saveContact(this.form.value).subscribe({
+          next: () => {
+            console.log('Dati salvati con successo!');
+            this.showSuccessModal();
+            this.form.reset();
+          },
+          error: (err: any) => {
+            console.error('Errore durante il salvataggio:', err);
+            this.showErrorModal();
+          },
+        });
+
+    } else {
+      this.form.markAllAsTouched();
     }
   }
 
+
+
+  // nav to contact section
   goToContact(param: string) {
     this.router.navigateByUrl(param);
   }
@@ -135,5 +148,33 @@ export class HomeComponent {
   getBentoboxSize(index: number): string {
     const size = (index % 5 === 0) ? 'large' : (index % 3 === 0) ? 'medium' : 'small';
     return size;
+  }
+
+  showSuccessModal() {
+    this.isModalOpen = true;
+    this.modalTitle = 'Richiesta inviata';
+    this.modalMessage = 'Grazie per avermi contattato! Ti risponderò al più presto.';
+    setTimeout(() => {
+      this.closeModal();
+    }, 3000);
+  }
+
+  showErrorModal() {
+    this.isModalOpen = true;
+    this.modalTitle = 'Errore';
+    this.modalMessage = 'Si è verificato un errore durante l\'invio della richiesta. Riprova più tardi.';
+    setTimeout(() => {
+      this.closeModal();
+    }, 3000);
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+  }
+
+  navigateToProject(url: string) {
+    this.router.navigateByUrl(`project/${url}`);
+    console.log(url);
+
   }
 }

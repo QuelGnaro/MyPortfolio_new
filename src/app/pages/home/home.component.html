@@ -68,7 +68,12 @@
       *ngFor="let item of projects; let i = index"
       [ngClass]="item.class"
     >
-      <img [src]="item.img" style="width: 100%" [alt]="item.titolo" />
+      <img
+        [src]="item.img"
+        style="width: 100%"
+        [alt]="item.title"
+        (click)="navigateToProject(item.url)"
+      />
       <div class="overlay-bento">
         <!-- <h3>{{ item.titolo }}</h3> -->
         <!-- <p>{{ item.descrizione }}</p> -->
@@ -202,6 +207,7 @@
               <input
                 [type]="field.type"
                 class="form__field"
+                [ngClass]="{ dark: theme == 'dark', light: theme == 'light' }"
                 [placeholder]="field.placeholder"
                 [id]="field.name"
                 [formControlName]="field.name"
@@ -216,14 +222,23 @@
                 form.get(field.name)?.invalid && form.get(field.name)?.touched
               "
             >
-              <small *ngIf="form.get(field.name)?.errors?.['required']"
-                >Questo campo è obbligatorio.</small
+              <small
+                class="invalid"
+                *ngIf="form.get(field.name)?.errors?.['required']"
               >
-              <small *ngIf="form.get(field.name)?.errors?.['email']"
-                >Email non valida.</small
+                {{ "form.invalid" | translate }}</small
               >
-              <small *ngIf="form.get(field.name)?.errors?.['min']"
-                >Valore troppo basso.</small
+              <small
+                class="invalid"
+                *ngIf="form.get(field.name)?.errors?.['email']"
+              >
+                {{ "form.invalid-email" | translate }}</small
+              >
+              <small
+                class="invalid"
+                *ngIf="form.get(field.name)?.errors?.['min']"
+              >
+                {{ "form.min" | translate }}</small
               >
             </div>
           </ng-container>
@@ -232,6 +247,7 @@
           <ng-container *ngIf="isTextareaField(field)">
             <div class="form__group">
               <textarea
+                [ngClass]="{ dark: theme == 'dark', light: theme == 'light' }"
                 class="form__field"
                 [formControlName]="field.name"
                 [maxlength]="field.maxLength!"
@@ -255,6 +271,10 @@
                 <label class="form-check-label">
                   <input
                     class="form-check-input"
+                    [ngClass]="{
+                      dark: theme == 'dark',
+                      light: theme == 'light'
+                    }"
                     type="radio"
                     [formControlName]="field.name"
                     [value]="option.value"
@@ -268,23 +288,51 @@
 
           <!-- ! checkbox -->
           <ng-container *ngIf="isCheckboxField(field)">
-            <label>
+            <label class="text-center">
               <input type="checkbox" [formControlName]="field.name" />
-              {{ field.label }}
+              {{ "form.privacy1" | translate }}
+              <a
+                href="https://www.termsfeed.com/live/7ee5e3b4-8966-4b94-b9a1-28ba63947621"
+                target="_blank"
+                >{{ "form.privacy2" | translate }}</a
+              >{{ "form.privacy3" | translate }}
             </label>
+
+            <!-- ! form error messages -->
+            <div
+              *ngIf="
+                form.get(field.name)?.invalid && form.get(field.name)?.touched
+              "
+            >
+              <small
+                class="invalid"
+                *ngIf="form.get(field.name)?.errors?.['required']"
+                >{{ "form.invalid" | translate }}</small
+              >
+            </div>
           </ng-container>
         </div>
       </div>
 
       <div class="d-flex justify-content-center">
-        <button
-          type="submit"
-          [disabled]="form.invalid"
-          class="custom-button mt-3"
-        >
-          Invia
-        </button>
+        <button type="submit" class="custom-button mt-3">Invia</button>
       </div>
     </form>
+  </div>
+
+  <div class="backdrop" *ngIf="isModalOpen"></div>
+  <div
+    *ngIf="isModalOpen"
+    class="alert text-center overlay"
+    [ngClass]="{
+      'alert-success': modalTitle === 'Richiesta inviata',
+      'alert-danger': modalTitle === 'Errore'
+    }"
+    role="alert"
+  >
+    <h4 class="alert-heading">{{ modalTitle }}</h4>
+    <p style="margin: none">
+      {{ modalMessage }}
+    </p>
   </div>
 </section>
