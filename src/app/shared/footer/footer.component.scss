@@ -4,3 +4,29 @@ footer {
   background-color: darken($primary-color, 3%);
   color: $quaternary-color;
 }
+
+button {
+  background-color: $quaternary-color;
+  color: $primary-color;
+
+  &:hover {
+    border: 1px solid $quaternary-color;
+    background-color: $primary-color;
+    color: $quaternary-color;
+  }
+}
+
+.copy-text {
+  display: inline-flex;
+  align-items: center;
+}
+.copy-icon {
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.copy-text:hover .copy-icon {
+  opacity: 1;
+}
