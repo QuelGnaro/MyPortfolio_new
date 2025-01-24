@@ -1,4 +1,5 @@
 <section class="p-5" *ngIf="projectDetails">
+  <!-- !Title -->
   <div class="d-flex flex-row justify-content-center">
     <div style="width: fit-content; padding: 20px" class="custom-border">
       <h1>{{ project!.title }}</h1>
@@ -6,26 +7,49 @@
   </div>
 
   <div class="container">
+    <!-- !Image -->
     <div class="image-container item1 quickslideInLeft">
       <img [src]="project!.img[0]" alt="" />
     </div>
+
     <div class="description-container glass-card item2 quickslideInRight">
-      <h4>Description</h4>
-      <p>{{ description | translate }}</p>
-      <h4>Techs</h4>
-      <p>{{ techs | translate }}</p>
-      <div class="skills-container">
-        <div
-          class="svg-container p-3"
-          *ngFor="let item of project?.techsIcons"
-          (click)="navigateToTech(item.docUrl!)"
-        >
-          <img [src]="item.url" alt="" style="width: 54px; height: 54px" />
-          <p style="margin: 0">{{ item.name }}</p>
+      <!-- !Description -->
+      <div *ngIf="description">
+        <h4>Description</h4>
+        <p>{{ description | translate }}</p>
+      </div>
+      <!-- !New Interface-->
+      <div *ngIf="newInterface">
+        <h4>New Interface</h4>
+        <p>{{ newInterface | translate }}</p>
+      </div>
+    </div>
+
+    <div class="description-container glass-card item3 slideInLeft">
+      <!-- !Techs -->
+      <div *ngIf="techs">
+        <h4>Techs</h4>
+        <p>{{ techs | translate }}</p>
+        <div class="skills-container">
+          <div
+            class="svg-container p-3"
+            *ngFor="let item of project?.techsIcons"
+            (click)="navigateToTech(item.docUrl!)"
+          >
+            <img [src]="item.url" alt="" style="width: 54px; height: 54px" />
+            <p style="margin: 0">{{ item.name }}</p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="description-container glass-card item3 slideInLeft">
+
+    <!-- !Image -->
+    <div class="image-container item4 slideInRight">
+      <img [src]="project!.img[0]" alt="" />
+    </div>
+
+    <div class="description-container glass-card item5 slideInBottom">
+      <!-- !Features -->
       <h4>Features</h4>
       <ul>
         <li *ngFor="let feature of getObjectKeys(projectDetails.features)">
@@ -33,17 +57,22 @@
         </li>
       </ul>
 
-      <h2>Subfeatures</h2>
-      <ul>
-        <li
-          *ngFor="let subfeature of getObjectKeys(projectDetails.subfeatures)"
-        >
-          {{ translateFeature(projectName!, subfeature) }}
-        </li>
-      </ul>
-    </div>
-    <div class="image-container item4 slideInRight">
-      <img [src]="project!.img[0]" alt="" />
+      <!-- !subfeatures -->
+      <div *ngIf="projectDetails.subfeature">
+        <h2>Subfeatures</h2>
+        <ul>
+          <li
+            *ngFor="let subfeature of getObjectKeys(projectDetails.subfeatures)"
+          >
+            {{ translateFeature(projectName!, subfeature) }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- !Conclusion-->
+      <div *ngIf="conclusion">
+        <p>{{ conclusion | translate }}</p>
+      </div>
     </div>
   </div>
 </section>

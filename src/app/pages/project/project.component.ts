@@ -34,6 +34,7 @@ export class ProjectComponent {
 
 
   ngOnInit(): void {
+    window.scrollTo({ top: 0 });
     this.projectName = this.route.snapshot.paramMap.get('id');
     this.project = this.projectsService.getProjectByUrl(this.projectName!);
     if (this.projectName && (projectData as any).projects[this.projectName]) {
@@ -59,6 +60,18 @@ export class ProjectComponent {
   }
   get techs(): string {
     return `projects.${this.projectName}.techs`;
+  }
+
+  get newInterface() {
+    const newInterface = `projects.${this.projectName}.new_interface`;
+    if (newInterface && this.translate.instant(newInterface) !== newInterface) {
+      return newInterface;
+    }
+    return false;
+  }
+
+  get conclusion() {
+    return `projects.${this.projectName}.conclusion`;
   }
 
 

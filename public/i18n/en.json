@@ -14,9 +14,19 @@
   },
 
   "projects": {
-    "moneychanger_description": "Moneychanger is a web app that allows you to convert between different currencies. It is a responsive web application built with Angular, in a Docker environment.",
+    "money-changer": {
+      "description": "Money Changer is a project I worked on from March 2024 to October 2024 at Moi Studio. It involves the redesign of an existing web app, with the goal of creating a new user interface, while the backend team worked on updating the internal functionalities. In parallel, a twin app was developed for managing bureaucratic procedures. Money Changer is a project I worked on from March 2024 to October 2024 at Moi Studio. It involves the redesign of an existing web app, with the goal of creating a new user interface, while the backend team worked on updating the internal functionalities. In parallel, a twin app was developed for managing bureaucratic procedures.",
+      "new_interface": "My main contribution was designing a new user interface for cash withdrawal management. Using Figma, I developed a modern and intuitive design that simplifies the workflow for the end user.",
+      "techs": "AG Grid: I integrated highly performant and customizable tables, designed to meet industrial-level needs. Dynamsoft's Dynamic Web TWAIN SDK: This browser-based SDK allows for the development of robust document scanning applications on all major browsers. It is designed to ensure speed, security, and scalability with just a few lines of JavaScript code. The project was executed in a containerized environment using Docker, ensuring that all components function optimally. To achieve this, I learned how to use Docker Desktop.",
+      "features": {
+        "1": "Quick and efficient document scanning: The app allows for simple and secure document scanning, saving the data in a solid and reliable database.",
+        "2": "Advanced data management: Customizable tables enable users with elevated privileges to manage and organize data with extreme precision.",
+        "3": "Currency exchange transaction management: The app provides a user-friendly experience for managing transactions quickly and efficiently, ensuring maximum security to prevent errors and protect customers."
+      },
+      "conclusion": "The project was developed in an Agile context, with close collaboration between the development and design teams to ensure a functional and high-quality end product."
+    },
     "money-tracker": {
-      "description": "Money Tracker is a mobile application designed to help you manage your finances in a simple and effective way. The project was born from my personal need to better organize daily expenses, a need that led me to first test various existing apps and then develop my own using my front-end developer skills in Angular.",
+      "description": "Money Tracker is a mobile application designed to help you manage your finances in a simple and effective way. The project was born out of my personal need to better organize daily expenses. After testing and studying various existing applications on the market, I drew inspiration from their main features to create an app that fully meets my personal needs and offers an enhanced user experience.",
       "techs": "The technology used for Money Tracker includes the Ionic framework with Capacitor for cross-platform development and Chart.js for displaying data in intuitive and easy-to-understand charts.",
       "features": {
         "1": "Expense tracking: You can record your expenses and categorize them in an organized way, to always have a clear overview of your finances.",

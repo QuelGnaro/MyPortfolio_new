@@ -15,9 +15,19 @@
   },
 
   "projects": {
-    "moneychanger_description": "Moneychanger è un'app web che ti permette di convertire tra diverse valute. È un'applicazione web responsive costruita con Angular, in un ambiente Docker.",
+    "money-changer": {
+      "description": "Money Changer è un progetto su cui ho lavorato da marzo 2024 a ottobre 2024 presso Moi Studio. Si tratta della rielaborazione di una web app già esistente, con l’obiettivo di creare una nuova interfaccia utente, mentre il team backend ha lavorato sull’aggiornamento delle funzionalità interne. Parallelamente, è stata sviluppata un’app gemella per la gestione delle pratiche burocratiche.Money Changer è un progetto su cui ho lavorato da marzo 2024 a ottobre 2024 presso Moi Studio. Si tratta della rielaborazione di una web app già esistente, con l’obiettivo di creare una nuova interfaccia utente, mentre il team backend ha lavorato sull’aggiornamento delle funzionalità interne. Parallelamente, è stata sviluppata un’app gemella per la gestione delle pratiche burocratiche.",
+      "new_interface": "Il mio contributo principale è stato progettare una nuova interfaccia utente per la gestione del ritiro di contanti. Usando Figma, ho sviluppato un design moderno e intuitivo che semplifica il flusso di lavoro per l’utente finale.",
+      "techs": "AG Grid: Ho integrato tabelle altamente performanti e personalizzabili, progettate per soddisfare esigenze a livello industriale. Dynamic Web TWAIN SDK di Dynamsoft: Questo SDK basato su browser consente di sviluppare applicazioni robuste per la scansione di documenti su tutti i principali browser. È progettato per garantire velocità, sicurezza e scalabilità con poche righe di codice JavaScript. Il progetto è stato eseguito in un ambiente containerizzato tramite Docker, garantendo che tutte le componenti funzionassero in maniera ottimale. Per raggiungere questo scopo, ho imparato a utilizzare Docker Desktop.",
+      "features": {
+        "1": "Scansione rapida ed efficace dei documenti: L’app consente di scansionare documenti in modo semplice e sicuro, salvando i dati in un database solido e affidabile.",
+        "2": "Gestione avanzata dei dati: Le tabelle personalizzabili permettono agli utenti con privilegi elevati di gestire e organizzare i dati con estrema precisione.",
+        "3": "Gestione delle transazioni di cambio valuta: L’app offre un’esperienza user-friendly per gestire le transazioni in modo rapido ed efficace, garantendo la massima sicurezza per prevenire errori e proteggere i clienti."
+      },
+      "conclusion": "Il progetto è stato sviluppato in un contesto Agile, con una stretta collaborazione tra i team di sviluppo e design per garantire un prodotto finale funzionale e di alta qualità."
+    },
     "money-tracker": {
-      "description": "Money Tracker è un’applicazione mobile progettata per aiutarti a gestire le tue finanze in modo semplice ed efficace. Il progetto è nato dalla mia esigenza personale di organizzare meglio le spese quotidiane, esigenza che mi ha portato prima a testare varie app già disponibili e successivamente a svilupparne una mia utilizzando le competenze da sviluppatore front-end in Angular.",
+      "description": "Money Tracker è un’applicazione mobile progettata per aiutarti a gestire le tue finanze in modo semplice ed efficace. Il progetto è nato dalla mia esigenza personale di organizzare meglio le spese quotidiane. Dopo aver testato e studiato diverse applicazioni già esistenti sul mercato, ho tratto ispirazione dalle loro funzionalità principali per creare un’app che rispondesse pienamente alle mie esigenze personali e che offrisse un’esperienza utente migliorata.",
       "techs": "La tecnologia utilizzata per Money Tracker include il framework Ionic con Capacitor per lo sviluppo multipiattaforma e Chart.js per visualizzare i dati in grafici intuitivi e facili da comprendere.",
       "features": {
         "1": "Tracciamento delle spese: Puoi registrare le tue uscite e categorizzarle in modo ordinato, per avere sempre una panoramica chiara delle tue finanze.",
@@ -28,7 +38,7 @@
         "sub3.1": "Suddivisione delle spese tra i membri del gruppo.",
         "sub3.2": "Gestione di eventuali debiti tra i membri, con calcoli automatici per bilanciare i conti."
       },
-      "money-tracker_end": "Lo scopo di Money Tracker è semplificare la gestione finanziaria sia individuale che condivisa, rendendola accessibile e visivamente comprensibile per tutti."
+      "conclusion": "Lo scopo di Money Tracker è semplificare la gestione finanziaria sia individuale che condivisa, rendendola accessibile e visivamente comprensibile per tutti."
     }
   },
   "footer": {
