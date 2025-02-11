@@ -107,6 +107,10 @@ html {
   line-height: 1.65;
 }
 
+h1 {
+  margin: 0;
+}
+
 .dark {
   background-color: $primary-color;
   color: $quaternary-color;
@@ -115,4 +119,32 @@ html {
 .light {
   background-color: $quaternary-color;
   color: $primary-color;
+}
+
+.custom-border {
+  position: relative;
+  border-left: 3px solid $secondary-color;
+  border-right: 3px solid $secondary-color;
+}
+
+/* Bordo superiore */
+.custom-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 3px;
+  background-color: $secondary-color;
+}
+
+/* Bordo inferiore */
+.custom-border::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: 3px;
+  background-color: $secondary-color;
 }

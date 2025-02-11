@@ -1,42 +1,11 @@
 @import "../../../styles/variables.scss";
 
-h1 {
-  margin: 0;
-}
-.custom-border {
-  position: relative;
-  border-left: 3px solid $secondary-color;
-  border-right: 3px solid $secondary-color;
-}
-
 .glass-card {
   background-color: #ffffff08;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   padding: 20px;
   backdrop-filter: blur(8px);
-}
-
-/* Bordo superiore */
-.custom-border::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30%;
-  height: 3px;
-  background-color: $secondary-color;
-}
-
-/* Bordo inferiore */
-.custom-border::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 30%;
-  height: 3px;
-  background-color: $secondary-color;
 }
 
 .about-container {
@@ -351,12 +320,14 @@ $gray: #9b9b9b;
 
 .bento-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 180px 180px 180px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 180px 180px;
   grid-template-areas:
-    "item1 item1 item2"
-    "item1 item1 item3"
-    "item4 item4 item4";
+    "item1  item2"
+    "item1  item2";
+  // "item1 item1 item3";
+  // "item1 item1 item3"
+  // "item4 item4 item4";
   gap: 1em;
 
   @media screen and (max-width: 768px) {
@@ -364,32 +335,56 @@ $gray: #9b9b9b;
     grid-template-rows: auto;
     grid-template-areas:
       "item1"
-      "item2"
-      "item3"
-      "item4";
+      "item2";
+    // "item3";
+    // "item4";
   }
 }
 
 .bento-item {
-  background-color: #ffffff08;
+  position: relative;
+  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   cursor: pointer;
-  &:hover {
-    transform: scale(1.1);
-    transition: 0.3s;
-  }
-
-  & img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-  }
   @media screen and (max-width: 768px) {
     width: 100%;
   }
 }
 
+.bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.bento-overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  transition: bottom 0.3s ease;
+}
+
+.bento-item:hover img {
+  transform: scale(1.1);
+}
+
+.bento-item:hover .bento-overlay {
+  bottom: 0;
+}
+
+// ! theme color
 .dark {
   color: $quaternary-color;
 }
@@ -398,16 +393,7 @@ $gray: #9b9b9b;
   color: $primary-color;
 }
 
-.overlay {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  z-index: 10;
-}
-
+// ! modal
 .backdrop {
   backdrop-filter: blur(10px);
   position: fixed;
