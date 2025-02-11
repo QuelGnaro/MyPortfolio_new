@@ -70,14 +70,12 @@
     >
       <img
         [src]="item.img"
-        style="width: 100%"
         [alt]="item.title"
         (click)="navigateToProject(item.url)"
       />
-      <div class="overlay-bento">
-        <!-- <h3>{{ item.titolo }}</h3> -->
-        <!-- <p>{{ item.descrizione }}</p> -->
-        <!-- <a [href]="item.link">Scopri di più</a> -->
+      <div class="bento-overlay">
+        <h3>{{ item.title }}</h3>
+        <p *ngIf="item.title === 'Money Tracker'">Work in Progress</p>
       </div>
     </div>
   </div>
