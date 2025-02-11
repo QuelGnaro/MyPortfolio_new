@@ -1,9 +1,14 @@
 @import "../../../styles/variables.scss";
 
 .main-container {
-  width: 100%;
+  width: 100vw;
   margin-top: 90px;
-  // padding: 2% 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .dark {

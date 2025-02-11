@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container mt-5">
     <!-- !Image -->
     <div class="image-container item1 quickslideInLeft">
       <img [src]="project!.img[0]" alt="" />
@@ -36,7 +36,11 @@
             *ngFor="let item of project?.techsIcons"
             (click)="navigateToTech(item.docUrl!)"
           >
-            <img [src]="item.url" alt="" style="width: 54px; height: 54px" />
+            <img
+              [src]="item.url"
+              alt=""
+              style="width: 54px; height: 54px; max-width: 54px"
+            />
             <p style="margin: 0">{{ item.name }}</p>
           </div>
         </div>

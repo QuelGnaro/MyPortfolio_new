@@ -8,8 +8,6 @@ import { PreferencesService } from '../../services/preferences.service';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-  //FIXME: ma serve?
-  @Output() isMobileMenuOpen = EventEmitter;
 
   sections = [
     { link: 'home', name: ' Home' },
@@ -50,7 +48,7 @@ export class NavbarComponent {
     this.isMobile = window.innerWidth <= 991;
   }
 
-  // TODO: sistemare per burger menu
+  // FIXME: sistemare per burger menu
   ngOnInit(): void {
     this.onResize();
     window.addEventListener('resize', this.onResize.bind(this));

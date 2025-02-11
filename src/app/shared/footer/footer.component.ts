@@ -12,10 +12,10 @@ export class FooterComponent {
   contacts = [
     { name: 'info@lorenzobaratti.it', icon: 'envelope', pre: 'fas' },
     { name: 'LinkedIn', icon: 'linkedin', pre: 'fab', url: 'https://www.linkedin.com/in/baratti-lorenzo/' },
-    { name: 'TikTok', icon: 'tiktok', pre: 'fab', url: 'https://www.linkedin.com/in/baratti-lorenzo/' },
-    { name: 'Instagram', icon: 'instagram', pre: 'fab', url: 'https://www.linkedin.com/in/baratti-lorenzo/' },
-    { name: 'Messanger', icon: 'facebook-messenger', pre: 'fab', url: 'https://www.linkedin.com/in/baratti-lorenzo/' },
-    { name: 'GitHub', icon: 'github', pre: 'fab', url: 'https://www.linkedin.com/in/baratti-lorenzo/' },
+    // { name: 'TikTok', icon: 'tiktok', pre: 'fab', url: 'https://www.linkedin.com/in/baratti-lorenzo/' },
+    // { name: 'Instagram', icon: 'instagram', pre: 'fab', url: 'https://www.linkedin.com/in/baratti-lorenzo/' },
+    // { name: 'Messanger', icon: 'facebook-messenger', pre: 'fab', url: 'https://www.linkedin.com/in/baratti-lorenzo/' },
+    { name: 'GitHub', icon: 'github', pre: 'fab', url: 'https://github.com/QuelGnaro' },
   ];
 
   year = new Date().getFullYear();

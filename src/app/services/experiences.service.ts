@@ -67,7 +67,18 @@ export class ExperiencesService {
       name: 'Postman',
       url: 'https://www.svgrepo.com/show/354202/postman-icon.svg',
       description: "Durante il workshop sul backend, abbiamo utilizzato Postman, un'applicazione che simula chiamate API. Ho trovato Postman molto utile per testare e sviluppare le API, poiché consente di eseguire richieste, visualizzare le risposte e testare vari scenari senza dover scrivere codice."
-    },];
+    },
+    {
+      name: 'Ionic',
+      url: 'https://www.svgrepo.com/show/373687/ionic.svg',
+      description: "Durante il corso 24 Ore Business School, abbiamo sperimentato Ionic, un framework specifico per la produzione di web app mobile. È stato un'esperienza molto interessante e piacevole, che ha arricchito le nostre competenze nello sviluppo di applicazioni mobile."
+    },
+    {
+      name: 'Firebase',
+      url: 'https://brandeps.com/logo-download/F/Firebase-logo-vector-02.svg',
+      description: ""
+    },
+    ];
   };
 
   getLearningSkills(): ISkill[] {
@@ -77,11 +88,7 @@ export class ExperiencesService {
         url: 'https://www.svgrepo.com/show/373863/nest-middleware-js.svg',
         description: "Durante il corso 24 Ore Business School, abbiamo affrontato una parte di back-end utilizzando Nest.js per creare un progetto base di REST API."
       },
-      {
-        name: 'Ionic',
-        url: 'https://www.svgrepo.com/show/373687/ionic.svg',
-        description: "Durante il corso 24 Ore Business School, abbiamo sperimentato Ionic, un framework specifico per la produzione di web app mobile. È stato un'esperienza molto interessante e piacevole, che ha arricchito le nostre competenze nello sviluppo di applicazioni mobile."
-      },
+
       {
         name: 'Electron Framework',
         url: 'https://www.svgrepo.com/show/353689/electron.svg',
@@ -107,16 +114,17 @@ export class ExperiencesService {
         url: 'https://www.svgrepo.com/show/452091/python.svg',
         description: ""
       },
-      {
-        name: 'Three.js',
-        url: 'https://global.discourse-cdn.com/flex035/uploads/threejs/original/2X/b/be2f75f72751c11cbe1593c69a99a52900bf12cb.svg',
-        description: ""
-      },
-      {
-        name: 'Pixi.js',
-        url: 'https://files.pixijs.download/branding/pixijs-logo-mark-dark.svg',
-        description: ""
-      },
+      { name: 'Chart.js', url: 'https://cdn.brandfetch.io/idFdo8ulhr/theme/dark/logo.svg?c=1bfwsmEH20zzEfSNTed', description: '' },
+      // {
+      //   name: 'Three.js',
+      //   url: 'https://global.discourse-cdn.com/flex035/uploads/threejs/original/2X/b/be2f75f72751c11cbe1593c69a99a52900bf12cb.svg',
+      //   description: ""
+      // },
+      // {
+      //   name: 'Pixi.js',
+      //   url: 'https://files.pixijs.download/branding/pixijs-logo-mark-dark.svg',
+      //   description: ""
+      // },
       // {
       //   name: 'Jest',
       //   url: 'https://www.svgrepo.com/show/373700/jest.svg',
@@ -133,16 +141,12 @@ export class ExperiencesService {
         url: 'https://cdn.worldvectorlogo.com/logos/ngrx.svg',
         description: "Durante il corso 24 Ore Business School, abbiamo discusso dello stato nell'ambito dello sviluppo di applicazioni web e abbiamo approfondito Ngrx, un framework per la gestione dello stato in Angular basato sul pattern Redux. Abbiamo implementato i reducer, le actions e i selectors per gestire lo stato in modo efficiente e scalabile."
       },
-      {
-        name: 'AWS',
-        url: 'https://www.svgrepo.com/show/448266/aws.svg',
-        description: ""
-      },
-      {
-        name: 'Firebase',
-        url: 'https://brandeps.com/logo-download/F/Firebase-logo-vector-02.svg',
-        description: ""
-      },
+      // {
+      //   name: 'AWS',
+      //   url: 'https://www.svgrepo.com/show/448266/aws.svg',
+      //   description: ""
+      // },
+
       {
         name: 'Ag Grid',
         url: '/assets/agGrid.svg',
