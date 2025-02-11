@@ -12,11 +12,11 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 import { SettingsButtonComponent } from './settings-button/settings-button.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { AgGridAngular } from 'ag-grid-angular';
 
 const sharedModules = [
   CommonModule, RouterModule, ReactiveFormsModule, FormsModule, FontAwesomeModule,
-  TranslateModule, NgbTooltipModule
+  TranslateModule, NgbTooltipModule, AgGridAngular,
 ];
 
 @NgModule({
