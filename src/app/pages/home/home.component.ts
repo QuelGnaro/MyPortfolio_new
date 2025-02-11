@@ -174,7 +174,8 @@ export class HomeComponent {
 
   navigateToProject(url: string) {
     this.router.navigateByUrl(`project/${url}`);
-    console.log(url);
-
+    if (url === 'anime-list') {
+      this.router.navigateByUrl(`anime-list`);
+    }
   }
 }

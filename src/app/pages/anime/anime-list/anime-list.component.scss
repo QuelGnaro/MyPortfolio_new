@@ -1,0 +1,33 @@
+@media screen and (max-width: 768px) {
+  .custom-grid {
+    overflow-x: auto;
+  }
+}
+
+.box {
+  display: flex;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 30px;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.box:hover input {
+  width: 5rem;
+}
+
+.box input {
+  width: 0;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  transition: 0.8s;
+  background: transparent;
+}
+
+.box i .fas {
+  font-size: 1.5rem;
+  color: #8ff4bb;
+}

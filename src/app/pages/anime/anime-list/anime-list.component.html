@@ -1,0 +1,87 @@
+<app-image-slider [topAnime]="topAnime"></app-image-slider>
+<!-- search bar e button -->
+
+<div class="input-group">
+  <form
+    (submit)="searchAnime()"
+    class="w-100 d-flex justify-content-center align-items-center"
+  >
+    <input
+      type="search"
+      name="search"
+      class="form-control rounded"
+      placeholder="Search any anime!"
+      aria-label="Search"
+      [(ngModel)]="search"
+      aria-describedby="search-addon"
+    />
+    <button
+      type="submit"
+      class="btn btn-primary"
+      data-mdb-ripple-init
+      (click)="searchAnime()"
+    >
+      <fa-icon [icon]="['fas', 'magnifying-glass']"></fa-icon>
+    </button>
+  </form>
+</div>
+
+<!-- da qui parte il giro di gif in base allo stato di caricamento -->
+<div
+  class="d-flex justify-content-center mt-5"
+  *ngIf="loading === false && animeList.length == 0 && searched === false"
+>
+  <img
+    [style]="{ width: '400px' }"
+    src="https://www.gifcen.com/wp-content/uploads/2022/04/jujutsu-kaisen-gif-9.gif"
+    alt="anime gif"
+  />
+</div>
+
+<div class="d-flex justify-content-center" *ngIf="loading">
+  <img
+    [style]="{ width: '400px' }"
+    src="https://i.redd.it/tmpp9e8opvo91.gif"
+    alt="juju gif"
+  />
+</div>
+<div class="d-flex justify-content-center" *ngIf="loading">
+  <img
+    [style]="{ width: '50px' }"
+    src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif"
+    alt="loading gif"
+  />
+</div>
+<div
+  class="d-flex justify-content-center"
+  *ngIf="loading === false && animeList.length == 0 && searched === true"
+>
+  <img
+    [style]="{ width: '500px' }"
+    src="https://media.tenor.com/QFPClG-dh9sAAAAi/cry-sad.gif"
+    alt="loading gif"
+  />
+  <h1>No Anime Found</h1>
+</div>
+
+<!-- da qua parte la lista di risultati -->
+<div
+  class="mt-5 ag-theme-quartz ag-grid-container"
+  *ngIf="loadAnimelist && !loading"
+>
+  <ag-grid-angular
+    [pagination]="true"
+    [autoSizeStrategy]="autoSizeStrategy"
+    [paginationPageSize]="paginationPageSize"
+    [paginationPageSizeSelector]="paginationPageSizeSelector"
+    [cacheBlockSize]="cacheBlockSize"
+    [rowData]="animeList"
+    [defaultColDef]="defaultColDef"
+    [columnDefs]="columnDefs"
+    [gridOptions]="animeGridOptions"
+    [domLayout]="domLayout"
+    (rowClicked)="onRowClicked($event)"
+  >
+    >
+  </ag-grid-angular>
+</div>

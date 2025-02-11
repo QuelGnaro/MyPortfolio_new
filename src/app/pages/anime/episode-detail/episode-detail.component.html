@@ -1,0 +1,37 @@
+<h1>
+  <b>#{{ episode.id }} - {{ episode.title }} </b>
+</h1>
+<small
+  >{{ episode.title_romanji }}
+  <small class="smaller"> ({{ episode.title_japanese }})</small>
+</small>
+
+<div class="card" style="margin-top: 10px">
+  <h3>Synopsis</h3>
+  <p>{{ episode.synopsis }}</p>
+  <p-divider type="solid"></p-divider>
+  <h3>Statistics</h3>
+  <div class="flex flex-column md:flex-row">
+    <div
+      class="w-full md:w-5 flex flex-column justify-content-center gap-3 py-5"
+    >
+      <b>Duration: </b>
+      <p>{{ episode.duration * 1000 | date : "mm:ss" }} minutes</p>
+    </div>
+    <div class="w-full md:w-2">
+      <p-divider layout="vertical"></p-divider>
+    </div>
+    <div
+      class="w-full md:w-5 flex flex-column justify-content-center gap-3 py-5"
+    >
+      <b>Release Date: </b>
+      <p>{{ episode.aired | date }}</p>
+    </div>
+  </div>
+</div>
+<p-scrollTop
+  target="window"
+  styleClass="custom-scrolltop"
+  [threshold]="100"
+  icon="pi pi-arrow-up"
+></p-scrollTop>

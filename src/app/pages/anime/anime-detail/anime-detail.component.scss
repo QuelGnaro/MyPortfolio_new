@@ -1,0 +1,27 @@
+p {
+  margin: 0;
+}
+
+.recap {
+  width: 15px;
+  height: 15px;
+  background-color: #e2bf4d;
+  border: 1px solid black;
+}
+
+.filler {
+  width: 15px;
+  height: 15px;
+  background-color: #548871;
+  border: 1px solid black;
+}
+
+.chart-container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+* {
+  border: red 1px solid;
+}

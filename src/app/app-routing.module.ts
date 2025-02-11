@@ -20,6 +20,10 @@ const routes: Routes = [
         path: 'project/:id',
         loadChildren: () => import('./pages/project/project.module').then(m => m.ProjectModule)
       },
+      {
+        path: 'anime-list',
+        loadChildren: () => import('./pages/anime/anime.module').then(m => m.AnimeModule)
+      },
     ]
   },
   {
