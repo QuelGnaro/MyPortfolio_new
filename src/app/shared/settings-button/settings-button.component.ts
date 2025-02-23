@@ -46,4 +46,12 @@ export class SettingsButtonComponent {
     this.preferencesService.setLanguage(newLanguage);
   }
 
+  bigger() {
+    this.preferencesService.bigger();
+  }
+
+  smaller() {
+    this.preferencesService.smaller();
+  }
+
 }

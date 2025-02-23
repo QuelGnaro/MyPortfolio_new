@@ -18,7 +18,14 @@
     />
   </div>
 
+  <div class="nd2 nds" (click)="smaller()">
+    <fa-icon class="icon" [icon]="['fas', 'magnifying-glass-minus']"></fa-icon>
+  </div>
+  <div class="nd1 nds" (click)="bigger()">
+    <fa-icon class="icon" [icon]="['fas', 'magnifying-glass-plus']"></fa-icon>
+  </div>
+
   <div id="floating-button">
-    <p class="gear">⚙️</p>
+    <fa-icon class="icon" [icon]="['fas', 'gear']"></fa-icon>
   </div>
 </div>

@@ -10,7 +10,8 @@ export class PreferencesService {
   private themeSubject = new BehaviorSubject<string>('dark');
   private languageSubject = new BehaviorSubject<string>('it');
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService,
+  ) {
     const savedTheme = localStorage.getItem('theme');
     const savedLanguage = localStorage.getItem('language');
 
@@ -47,5 +48,19 @@ export class PreferencesService {
 
   getTheme() {
     return this.themeSubject.getValue();
+  }
+
+  bigger() {
+    document.querySelectorAll("p").forEach(el => {
+      const currentSize = parseFloat(getComputedStyle(el).fontSize);
+      el.style.fontSize = `${currentSize + 1}px`;
+    });
+  }
+
+  smaller() {
+    document.querySelectorAll("p").forEach(el => {
+      const currentSize = parseFloat(getComputedStyle(el).fontSize);
+      el.style.fontSize = `${currentSize - 1}px`;
+    });
   }
 }

@@ -66,7 +66,7 @@ export class FooterComponent {
     if (this.language === 'en') {
       window.open('assets/cv/cv_en.pdf', '_blank');
     } else
-      window.open('assets/cv/CV ITA.pdf', '_blank');
+      window.open('assets/cv/CV_ITA.pdf', '_blank');
   }
 
   email: string = 'info@lorenzobaratti.it';

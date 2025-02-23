@@ -11,6 +11,7 @@ export class ExperiencesService {
 
   getExperiences(): IExperience[] {
     return [
+      { role: 'Frontend Developer', company: 'Freelance', period: '10-2024 - Present', location: 'Milano, Italia', mode: 'Full remote', modeIcon: 'headset', description: 'experience.freelance', logos: { logo: '/assets/logos/webdev_lb_logo.png' }, pills: ['Ionic', 'Firebase', 'Hosting services',] },
       { role: 'Frontend Developer', company: 'Moi Studio', period: '03-2024 - 10-2024', location: 'Pistoia, Italia', mode: 'Full remote', modeIcon: 'headset', description: 'experience.moi_2024', logos: { lightLogo: 'https://moistudio.it/wp-content/uploads/2023/08/Logo-MOI-Studio-v2-2048x1009.png', darkLogo: 'https://moistudio.it/wp-content/uploads/2023/08/Logo-MOI-Studio.png', logo: '' }, pills: ['JS', 'Docker', 'Dynamic WEB TWAIN', 'AG Grid'] },
       { role: 'B2B Sales Representative', company: 'More S.R.L.', period: '02-2019 - 05-2023', location: 'Milano, Italia', mode: 'On site', modeIcon: 'briefcase', description: 'experience.more_sales', logos: { logo: '/assets/logos/logo+MORE.png' }, pills: ['Prospecting e Lead Generation', 'Communication and Negotiation', 'Sales Cycle Management', 'Analytical Skills'] },
       { role: 'Store Manager', company: 'More S.R.L.', period: '07-2017 - 05-2023', location: 'Milano / Roma, Italia', mode: 'On site', modeIcon: 'briefcase', description: 'experience.more_store_manager', logos: { logo: '/assets/logos/logo+MORE.png' }, pills: ['Leadership', 'Effective Communication', 'Time management', 'Problem-solving'] },

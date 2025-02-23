@@ -38,14 +38,14 @@
 #container-floating {
   position: fixed;
   width: max-content;
-  height: max-content;
+  height: auto;
   bottom: 50%;
   right: 20px;
   z-index: 50px;
 }
 
 #container-floating:hover {
-  height: 180px;
+  height: 240px;
   width: max-content;
   padding: 30px;
 }
@@ -71,6 +71,36 @@
 .nd4 {
   right: 25px;
   top: calc(50% - 60px);
+  animation-delay: 0.1s;
+  animation: bounce-out-nds 0.1s linear;
+  animation-fill-mode: forwards;
+  &.dark {
+    background-color: $primary-color;
+    color: $quaternary-color;
+  }
+  &.light {
+    background-color: $quaternary-color;
+    color: $primary-color;
+  }
+}
+.nd2 {
+  right: 25px;
+  top: calc(50% - 180px);
+  animation-delay: 0.1s;
+  animation: bounce-out-nds 0.1s linear;
+  animation-fill-mode: forwards;
+  &.dark {
+    background-color: $primary-color;
+    color: $quaternary-color;
+  }
+  &.light {
+    background-color: $quaternary-color;
+    color: $primary-color;
+  }
+}
+.nd1 {
+  right: 25px;
+  top: calc(50% - 240px);
   animation-delay: 0.1s;
   animation: bounce-out-nds 0.1s linear;
   animation-fill-mode: forwards;
