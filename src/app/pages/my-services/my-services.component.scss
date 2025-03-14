@@ -1,0 +1,68 @@
+.title {
+  font-size: 6rem;
+  text-align: center;
+  font-weight: bold;
+  transition: font-size 0.3s ease;
+  line-height: 1.2;
+}
+
+/* Media query per dispositivi mobili */
+@media (max-width: 768px) {
+  .title {
+    font-size: 4rem; /* Ridurre la dimensione del testo su schermi più piccoli */
+  }
+}
+
+/* Media query per schermi ancora più piccoli (come smartphone in verticale) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 3.5rem; /* Ulteriore riduzione della dimensione per schermi molto piccoli */
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff7300,
+    #ffeb00,
+    #47ff00,
+    #00ffe5,
+    #2b65ff,
+    #8000ff,
+    #ff0080
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 6s infinite linear;
+}
+
+/* Animazione fluida del gradient */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.description-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.description-text {
+  font-size: 2rem;
+  flex: 1;
+}
+
+.description-image {
+  max-width: 300px;
+  height: auto;
+}

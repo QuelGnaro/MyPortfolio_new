@@ -1,0 +1,83 @@
+<section class="p-5">
+  <h1 class="title">
+    Website for <span class="gradient-text">EVERYBODY</span>
+  </h1>
+</section>
+<section class="p-5">
+  <p>{{ "services.description" | translate }}</p>
+  <ul>
+    <li>
+      <strong>{{ "services.benefits.visibility" | translate }}</strong>
+      {{ "services.benefits.visibility1" | translate }}
+    </li>
+    <li>
+      <strong>{{ "services.benefits.professional" | translate }}</strong>
+      {{ "services.benefits.professional1" | translate }}
+    </li>
+    <li>
+      <strong>{{ "services.benefits.contact" | translate }}</strong>
+      {{ "services.benefits.contact1" | translate }}
+    </li>
+    <li>
+      <strong>{{ "services.benefits.responsive" | translate }}</strong>
+      {{ "services.benefits.responsive1" | translate }}
+    </li>
+  </ul>
+
+  <h2>{{ "services.packages.title" | translate }}</h2>
+
+  <div class="package">
+    <h3>🔹 Basic - 300€</h3>
+    <ul>
+      <li>{{ "services.packages.basic.features.1" | translate }}</li>
+      <li>{{ "services.packages.basic.features.2" | translate }}</li>
+      <li>{{ "services.packages.basic.features.3" | translate }}</li>
+      <li>{{ "services.packages.basic.features.4" | translate }}</li>
+      <li>{{ "services.packages.basic.features.5" | translate }}</li>
+    </ul>
+  </div>
+
+  <div class="package">
+    <h3>🔹 Advanced - 600€</h3>
+    <ul>
+      <li>{{ "services.packages.advanced.features.1" | translate }}</li>
+      <li>{{ "services.packages.advanced.features.2" | translate }}</li>
+      <li>{{ "services.packages.advanced.features.3" | translate }}</li>
+      <li>{{ "services.packages.advanced.features.4" | translate }}</li>
+      <li>{{ "services.packages.advanced.features.5" | translate }}</li>
+    </ul>
+  </div>
+
+  <!-- <h2>Portfolio & Esempi</h2>
+  <p>[Inserisci qui screenshot o link ai tuoi lavori precedenti]</p>
+  
+  <h2>Cosa dicono i miei clienti</h2>
+  <blockquote>
+    “Grazie al sito realizzato, ho ricevuto molti più contatti e richieste di
+    preventivo!” – [Nome Cliente]
+  </blockquote>
+  <blockquote>
+    “Professionale e veloce! Il mio nuovo sito è fantastico.” – [Nome Cliente]
+  </blockquote> -->
+
+  <!-- ! contact -->
+
+  <app-form (formResponse)="handleFormResponse($event)"></app-form>
+
+  <ng-template #content let-modal>
+    <div class="myModal">
+      <div class="modal-header">
+        <h4 class="modal-title">{{ modalTitle }}</h4>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          (click)="modal.dismiss('Cross click')"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>{{ modalMessage }}</p>
+      </div>
+    </div>
+  </ng-template>
+</section>
