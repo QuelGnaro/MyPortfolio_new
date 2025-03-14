@@ -1,0 +1,136 @@
+<!-- ! contact -->
+
+<section class="p-5">
+  <div class="d-flex flex-row justify-content-center">
+    <div style="width: fit-content; padding: 20px" class="custom-border">
+      <h1 id="contactForm">Contact</h1>
+    </div>
+  </div>
+  <div id="customerForm" class="mt-5">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div
+        class="d-flex flex-column justify-content-center align-items-center glass-card mt-3"
+      >
+        <div
+          *ngFor="let field of fields; let i = index"
+          class="col-sm-8 col-md-8 my-3"
+        >
+          <ng-container *ngIf="isTextField(field)">
+            <!-- ! custom input field -->
+            <div class="form__group">
+              <input
+                [type]="field.type"
+                class="form__field"
+                [ngClass]="{ dark: theme == 'dark', light: theme == 'light' }"
+                [placeholder]="field.placeholder"
+                [id]="field.name"
+                [formControlName]="field.name"
+                required
+              />
+              <label class="form__label">{{ field.label }}</label>
+            </div>
+
+            <!-- ! form error messages -->
+            <div
+              *ngIf="
+                form.get(field.name)?.invalid && form.get(field.name)?.touched
+              "
+            >
+              <small
+                class="invalid"
+                *ngIf="form.get(field.name)?.errors?.['required']"
+              >
+                {{ "form.invalid" | translate }}</small
+              >
+              <small
+                class="invalid"
+                *ngIf="form.get(field.name)?.errors?.['email']"
+              >
+                {{ "form.invalid-email" | translate }}</small
+              >
+              <small
+                class="invalid"
+                *ngIf="form.get(field.name)?.errors?.['min']"
+              >
+                {{ "form.min" | translate }}</small
+              >
+            </div>
+          </ng-container>
+
+          <!-- ! textarea -->
+          <ng-container *ngIf="isTextareaField(field)">
+            <div class="form__group">
+              <textarea
+                [ngClass]="{ dark: theme == 'dark', light: theme == 'light' }"
+                class="form__field"
+                [formControlName]="field.name"
+                [maxlength]="field.maxLength!"
+              ></textarea>
+
+              <div id="charCounter" class="counter">
+                {{ textCounter }} / 300
+              </div>
+              <label class="form__label">{{ field.label }}</label>
+            </div>
+          </ng-container>
+
+          <!-- !radio -->
+          <ng-container
+            class="row d-flex justify-content-center"
+            *ngIf="isRadioField(field)"
+          >
+            <div class="col-4">
+              <label [for]="field.name">{{ field.label }}</label>
+              <div class="form-check" *ngFor="let option of field.options">
+                <label class="form-check-label">
+                  <input
+                    class="form-check-input"
+                    [ngClass]="{
+                      dark: theme == 'dark',
+                      light: theme == 'light'
+                    }"
+                    type="radio"
+                    [formControlName]="field.name"
+                    [value]="option.value"
+                    [checked]="form.get(field.name)?.value === option.value"
+                  />
+                  {{ option.label }}
+                </label>
+              </div>
+            </div>
+          </ng-container>
+
+          <!-- ! checkbox -->
+          <ng-container *ngIf="isCheckboxField(field)">
+            <label class="text-center">
+              <input type="checkbox" [formControlName]="field.name" />
+              {{ "form.privacy1" | translate }}
+              <a
+                href="https://www.termsfeed.com/live/7ee5e3b4-8966-4b94-b9a1-28ba63947621"
+                target="_blank"
+                >{{ "form.privacy2" | translate }}</a
+              >{{ "form.privacy3" | translate }}
+            </label>
+
+            <!-- ! form error messages -->
+            <div
+              *ngIf="
+                form.get(field.name)?.invalid && form.get(field.name)?.touched
+              "
+            >
+              <small
+                class="invalid"
+                *ngIf="form.get(field.name)?.errors?.['required']"
+                >{{ "form.invalid" | translate }}</small
+              >
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="custom-button mt-3">Invia</button>
+      </div>
+    </form>
+  </div>
+</section>
