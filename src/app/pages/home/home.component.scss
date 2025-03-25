@@ -204,14 +204,15 @@ $gray: #9b9b9b;
 
 .bento-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 180px 180px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 180px 180px 180px;
   grid-template-areas:
-    "item1  item1"
-    "item2  item3";
-  // "item1 item1 item3";
-  // "item1 item1 item3"
-  // "item4 item4 item4";
+    // "item1  item1"
+    // "item2  item3";
+
+    "item2 item1 item1"
+    "item2 item1 item1"
+    "item3 item3 item4";
   gap: 1em;
 
   @media screen and (max-width: 768px) {
@@ -220,8 +221,8 @@ $gray: #9b9b9b;
     grid-template-areas:
       "item1"
       "item2"
-      "item3";
-    // "item4";
+      "item3"
+      "item4";
   }
 }
 
