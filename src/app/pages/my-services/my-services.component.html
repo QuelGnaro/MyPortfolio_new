@@ -1,52 +1,121 @@
-<section class="p-5">
+<header class="p-5">
   <h1 class="title">
     Website for <span class="gradient-text">EVERYBODY</span>
   </h1>
-</section>
-<section class="p-5">
-  <p>{{ "services.description" | translate }}</p>
-  <ul>
-    <li>
-      <strong>{{ "services.benefits.visibility" | translate }}</strong>
-      {{ "services.benefits.visibility1" | translate }}
-    </li>
-    <li>
-      <strong>{{ "services.benefits.professional" | translate }}</strong>
-      {{ "services.benefits.professional1" | translate }}
-    </li>
-    <li>
-      <strong>{{ "services.benefits.contact" | translate }}</strong>
-      {{ "services.benefits.contact1" | translate }}
-    </li>
-    <li>
-      <strong>{{ "services.benefits.responsive" | translate }}</strong>
-      {{ "services.benefits.responsive1" | translate }}
-    </li>
-  </ul>
+</header>
+<main class="p-5">
+  <section>
+    <div
+      class="d-flex flex-wrap justify-content-center px-5 align-items-center gap-3"
+    >
+      <img
+        src="/assets/image_web_2.jpeg"
+        alt="artesan"
+        class="col-3 services-image"
+      />
+      <div class="col-md-5 col-sm-10 d-flex flex-column">
+        <h1 class="mt-3">{{ "services.description" | translate }}</h1>
+      </div>
+    </div>
+  </section>
 
-  <h2>{{ "services.packages.title" | translate }}</h2>
+  <section class="mt-5">
+    <div class="d-flex flex-row justify-content-center">
+      <div style="width: fit-content; padding: 20px" class="custom-border">
+        <h1>{{ "services.benefits.title" | translate }}</h1>
+      </div>
+    </div>
+    <div class="glass-card col mt-5">
+      <ul>
+        <li>
+          <p>
+            <strong>{{ "services.benefits.visibility" | translate }}</strong>
+            {{ "services.benefits.visibility1" | translate }}
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>{{ "services.benefits.professional" | translate }}</strong>
+            {{ "services.benefits.professional1" | translate }}
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>{{ "services.benefits.contact" | translate }}</strong>
+            {{ "services.benefits.contact1" | translate }}
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>{{ "services.benefits.responsive" | translate }}</strong>
+            {{ "services.benefits.responsive1" | translate }}
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-  <div class="package">
-    <h3>🔹 Basic - 300€</h3>
-    <ul>
-      <li>{{ "services.packages.basic.features.1" | translate }}</li>
-      <li>{{ "services.packages.basic.features.2" | translate }}</li>
-      <li>{{ "services.packages.basic.features.3" | translate }}</li>
-      <li>{{ "services.packages.basic.features.4" | translate }}</li>
-      <li>{{ "services.packages.basic.features.5" | translate }}</li>
-    </ul>
-  </div>
+  <section class="mt-5">
+    <div class="d-flex flex-row justify-content-center">
+      <div style="width: fit-content; padding: 20px" class="custom-border">
+        <h1>{{ "services.packages.title" | translate }}</h1>
+      </div>
+    </div>
 
-  <div class="package">
-    <h3>🔹 Advanced - 600€</h3>
-    <ul>
-      <li>{{ "services.packages.advanced.features.1" | translate }}</li>
-      <li>{{ "services.packages.advanced.features.2" | translate }}</li>
-      <li>{{ "services.packages.advanced.features.3" | translate }}</li>
-      <li>{{ "services.packages.advanced.features.4" | translate }}</li>
-      <li>{{ "services.packages.advanced.features.5" | translate }}</li>
-    </ul>
-  </div>
+    <div class="d-flex justify-content-evenly flex-wrap">
+      <div class="glass-card mt-5" style="width: 45%; min-width: 300px">
+        <div class="package">
+          <h3>🔹 Basic - 300€<sup>*</sup></h3>
+          <ul>
+            <li>
+              <p>{{ "services.packages.basic.features.1" | translate }}</p>
+            </li>
+            <li>
+              <p>{{ "services.packages.basic.features.2" | translate }}</p>
+            </li>
+            <li>
+              <p>{{ "services.packages.basic.features.3" | translate }}</p>
+            </li>
+            <li>
+              <p>{{ "services.packages.basic.features.4" | translate }}</p>
+            </li>
+            <li>
+              <p>{{ "services.packages.basic.features.5" | translate }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="glass-card mt-5" style="width: 45%; min-width: 300px">
+        <div class="package">
+          <h3>🔸 Advanced - 600€<sup>*</sup></h3>
+          <ul>
+            <li>
+              <p>{{ "services.packages.advanced.features.1" | translate }}</p>
+            </li>
+            <li>
+              <p>{{ "services.packages.advanced.features.2" | translate }}</p>
+            </li>
+            <li>
+              <p>{{ "services.packages.advanced.features.3" | translate }}</p>
+            </li>
+            <li>
+              <p>{{ "services.packages.advanced.features.4" | translate }}</p>
+            </li>
+            <li>
+              <p>{{ "services.packages.advanced.features.5" | translate }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <small
+        >* Il prezzo indicato è il prezzo di partenza. Il costo finale può
+        variare in base alle richieste del cliente e alle specifiche del
+        servizio.</small
+      >
+    </div>
+  </section>
 
   <!-- <h2>Portfolio & Esempi</h2>
   <p>[Inserisci qui screenshot o link ai tuoi lavori precedenti]</p>
@@ -80,4 +149,4 @@
       </div>
     </div>
   </ng-template>
-</section>
+</main>

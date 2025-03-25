@@ -3,6 +3,7 @@
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
 @import "styles/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 @keyframes scroll {
   from {
@@ -147,4 +148,12 @@ h1 {
   width: 30%;
   height: 3px;
   background-color: $secondary-color;
+}
+
+.glass-card {
+  background-color: #ffffff08;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  backdrop-filter: blur(8px);
 }
