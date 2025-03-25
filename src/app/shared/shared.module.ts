@@ -13,6 +13,11 @@ import { SettingsButtonComponent } from './settings-button/settings-button.compo
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { AgGridAngular } from 'ag-grid-angular';
+import { FormModalComponent } from '../components/form-modal/form-modal.component';
+import { FormComponent } from '../components/form/form.component';
+import { MyChartComponent } from '../components/my-cahrt/my-chart.component';
+import { PrimeNgModule } from './primeng.module';
+import { NgrxTaskManagerComponent } from '../components/ngrx-task-manager/ngrx-task-manager.component';
 
 const sharedModules = [
   CommonModule, RouterModule, ReactiveFormsModule, FormsModule, FontAwesomeModule,
@@ -26,12 +31,19 @@ const sharedModules = [
     FooterComponent,
     ScrollToTopButtonComponent,
     SettingsButtonComponent,
+    FormComponent,
+    FormModalComponent,
+    MyChartComponent,
+    NgrxTaskManagerComponent,
+
   ],
   imports: [
-    ...sharedModules
+    ...sharedModules, PrimeNgModule
   ],
   exports: [
-    ...sharedModules
+    ...sharedModules, FormComponent,
+    NgrxTaskManagerComponent,
+    FormModalComponent, MyChartComponent,
   ],
 
 })

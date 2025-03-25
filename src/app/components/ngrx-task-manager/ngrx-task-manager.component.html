@@ -1,0 +1,107 @@
+<!-- todo.component.html -->
+<div class="todo-container">
+  <h2 class="todo-title">My Tasks</h2>
+
+  <!-- Form per aggiungere nuove task -->
+  <div class="todo-add-card">
+    <input
+      #taskInput
+      type="text"
+      placeholder="What needs to be done?"
+      class="todo-input"
+      (keyup.enter)="addTask(taskInput.value); taskInput.value = ''"
+    />
+    <button
+      class="todo-add-btn"
+      (click)="addTask(taskInput.value); taskInput.value = ''"
+    >
+      <svg class="plus-icon" viewBox="0 0 24 24">
+        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Lista delle task -->
+  <div class="todo-list">
+    @for (task of tasks$ | async; track task.id) {
+    <div class="todo-item" [class.completed]="task.completed">
+      <div class="todo-item-content">
+        <label class="todo-checkbox">
+          <input
+            type="checkbox"
+            [checked]="task.completed"
+            (change)="toggleTask(task.id)"
+          />
+          <span class="checkmark"></span>
+        </label>
+
+        <span
+          class="todo-text"
+          [contentEditable]="task.editing"
+          (blur)="updateTask(task.id, $event)"
+          (keydown.enter)="updateTask(task.id, $event); $event.preventDefault()"
+          [class.editing]="task.editing"
+        >
+          {{ task.text }}
+        </span>
+      </div>
+
+      <div class="todo-actions">
+        <button class="todo-edit-btn" (click)="enableEditing(task.id)">
+          <svg class="edit-icon" viewBox="0 0 24 24">
+            <path
+              d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"
+            />
+          </svg>
+        </button>
+        <button class="todo-delete-btn" (click)="deleteTask(task.id)">
+          <svg class="delete-icon" viewBox="0 0 24 24">
+            <path
+              d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    } @empty {
+    <div class="todo-empty-state">
+      <svg class="empty-icon" viewBox="0 0 24 24">
+        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+      </svg>
+      <p>No tasks yet. Add one above!</p>
+    </div>
+    }
+  </div>
+
+  <!-- Filtri e stato -->
+  <div class="todo-filters">
+    <button
+      class="filter-btn"
+      [class.active]="(currentFilter$ | async) === 'all'"
+      (click)="setFilter('all')"
+    >
+      All
+    </button>
+    <button
+      class="filter-btn"
+      [class.active]="(currentFilter$ | async) === 'active'"
+      (click)="setFilter('active')"
+    >
+      Active
+    </button>
+    <button
+      class="filter-btn"
+      [class.active]="(currentFilter$ | async) === 'completed'"
+      (click)="setFilter('completed')"
+    >
+      Completed
+    </button>
+    <button
+      class="clear-completed"
+      (click)="clearCompleted()"
+      [disabled]="(hasCompletedTasks$ | async) === false"
+    >
+      Clear completed
+    </button>
+  </div>
+</div>

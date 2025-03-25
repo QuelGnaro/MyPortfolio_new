@@ -40,6 +40,24 @@
         "sub3.2": "Gestione di eventuali debiti tra i membri, con calcoli automatici per bilanciare i conti."
       },
       "conclusion": "Lo scopo di Money Tracker è semplificare la gestione finanziaria sia individuale che condivisa, rendendola accessibile e visivamente comprensibile per tutti."
+    },
+    "tasks-manager": {
+      "description": "Un componente Todo integrato nel mio portfolio personale, sviluppato con Angular 18 e NgRx per dimostrare competenze avanzate nella gestione dello stato. L'obiettivo era creare un'interfaccia moderna e reattiva che mostrasse l'integrazione fluida tra componenti UI e state management.",
+      "new_interface": "Ho progettato un'interfaccia con design glassmorphism che si integra perfettamente con la palette del portfolio, focalizzata sull'usabilità mobile-first. L'animazione delle transizioni e il feedback visivo delle azioni sono stati ottimizzati per un'esperienza utente fluida.",
+      "techs": "Angular 18: Sfruttando le ultime feature come i nuovi control flow. NgRx: Implementato con store, actions e reducer per una gestione scalabile dello stato. RxJS: Per la reattività e gestione degli osservabili. SCSS: Con variabili CSS per una perfetta integrazione con la palette esistente.",
+      "features": {
+        "1": "Architettura a stato centralizzato: Tutte le operazioni CRUD passano attraverso lo store NgRx, dimostrando best practice per applicazioni complesse.",
+        "2": "Modifica in-line: Permette di modificare i testi delle task direttamente nel componente, con autosave su blur.",
+        "3": "Filtri intelligenti: Implementati tramite selector memoizzati per massimizzare le performance.",
+        "4": "Persistence layer: Facilmente estendibile per salvare lo stato in localStorage o backend."
+      },
+      "subfeatures": {
+        "sub4.1": "Struttura modulare dell'store",
+        "sub4.2": "Azioni tipizzate con payload",
+        "sub4.3": "Reducer puri con gestione immutabile dello stato",
+        "sub4.4": "Selector efficienti per derivare dati complessi"
+      },
+      "conclusion": "Questo componente dimostra come NgRx possa semplificare la gestione dello stato anche in progetti di medie dimensioni, offrendo strumenti potenti per il debug (Redux DevTools) e una base solida per future estensioni. L'integrazione con Angular 18 mostra l'approccio moderno al reactive programming."
     }
   },
   "footer": {
@@ -54,5 +72,45 @@
     "privacy1": "Accetto termini e",
     "privacy2": " condizioni (GDPR)",
     "privacy3": " e di essere ricontattato da Lorenzo Baratti o da suoi assistenti."
+  },
+  "services": {
+    "title": "Servizi - Siti Web per Artigiani e Piccole Aziende",
+    "description": "Sei un artigiano o hai una piccola attività? Ti aiuto a costruire la tua presenza online con un sito web su misura, semplice da gestire e ottimizzato per attirare nuovi clienti.",
+    "benefits": {
+      "title": "Vantaggi",
+      "visibility": "Aumenta la tua visibilità",
+      "visibility1": " su Google e sui social",
+      "professional": "Dà un’immagine professionale",
+      "professional1": " al tuo lavoro",
+      "contact": "Facilita il contatto con nuovi clienti tramite moduli e chat",
+      "contact1": " tramite moduli e chat",
+      "responsive": "Funziona su tutti i dispositivi (mobile, tablet, PC)",
+      "responsive1": " (mobile, tablet, PC)"
+    },
+    "packages": {
+      "title": "Pacchetti e Prezzi",
+      "basic": {
+        "title": "Pacchetto Base",
+        "price": "300€",
+        "features": {
+          "1": "Sito vetrina (Home, Chi Siamo, Contatti)",
+          "2": "Design responsive (adattabile a smartphone e tablet)",
+          "3": "Modulo di contatto",
+          "4": "Ottimizzazione SEO base",
+          "5": "Tempi di realizzazione: 1-2 settimane"
+        }
+      },
+      "advanced": {
+        "title": "Pacchetto Avanzato",
+        "price": "600€",
+        "features": {
+          "1": "Tutto il pacchetto base +",
+          "2": "Blog o catalogo prodotti",
+          "3": "Integrazione con Firebase per gestione dati",
+          "4": "Miglioramenti SEO e velocità",
+          "5": "Tempi di realizzazione: 2-4 settimane"
+        }
+      }
+    }
   }
 }

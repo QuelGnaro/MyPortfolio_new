@@ -1,4 +1,4 @@
-<section class="p-5" *ngIf="projectDetails">
+<main class="p-5" *ngIf="projectDetails">
   <!-- !Title -->
   <div class="d-flex flex-row justify-content-center">
     <div style="width: fit-content; padding: 20px" class="custom-border">
@@ -6,13 +6,17 @@
     </div>
   </div>
 
+  <ng-container *ngIf="projectName == 'tasks-manager'"
+    ><app-ngrx-task-manager></app-ngrx-task-manager>
+  </ng-container>
+
   <div class="container mt-5">
     <!-- !Image -->
     <div class="image-container item1 quickslideInLeft">
       <img [src]="project!.img[0]" alt="" />
     </div>
 
-    <div class="description-container glass-card item2 quickslideInRight">
+    <section class="description-container glass-card item2 quickslideInRight">
       <!-- !Description -->
       <div *ngIf="description">
         <h4>Description</h4>
@@ -23,9 +27,9 @@
         <h4>New Interface</h4>
         <p>{{ newInterface | translate }}</p>
       </div>
-    </div>
+    </section>
 
-    <div class="description-container glass-card item3 slideInLeft">
+    <section class="description-container glass-card item3 slideInLeft">
       <!-- !Techs -->
       <div *ngIf="techs">
         <h4>Techs</h4>
@@ -45,14 +49,14 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- !Image -->
     <div class="image-container item4 slideInRight">
       <img [src]="project!.img[0]" alt="" />
     </div>
 
-    <div class="description-container glass-card item5 slideInBottom">
+    <section class="description-container glass-card item5 slideInBottom">
       <!-- !Features -->
       <h4>Features</h4>
       <ul>
@@ -77,6 +81,6 @@
       <div *ngIf="conclusion">
         <p>{{ conclusion | translate }}</p>
       </div>
-    </div>
+    </section>
   </div>
-</section>
+</main>

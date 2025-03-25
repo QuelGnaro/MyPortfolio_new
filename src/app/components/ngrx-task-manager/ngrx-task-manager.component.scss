@@ -1,0 +1,285 @@
+@import "../../../styles/variables.scss";
+
+.todo-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba($primary-color, 0.9); // Usa $primary-color con opacità
+  border: 1px solid rgba($quaternary-color, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.todo-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: $quaternary-color;
+  font-weight: 600;
+}
+
+.todo-add-card {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba($tertiary-color, 0.1);
+  color: $quaternary-color;
+
+  font-size: 1rem;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+  }
+
+  &::placeholder {
+    color: rgba($quaternary-color, 0.5);
+  }
+}
+
+.todo-add-btn {
+  background: $secondary-color; // Usa il tuo bel verde acqua
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: lighten($secondary-color, 10%);
+    transform: translateY(-2px);
+  }
+
+  .plus-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.todo-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  &.completed {
+    opacity: 0.7;
+
+    .todo-text {
+      text-decoration: line-through;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+.todo-item-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.todo-checkbox {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 24px; // Dimensione fissa
+  height: 24px; // Dimensione fissa
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+    &:checked ~ .checkmark {
+      background: $secondary-color; // Usa il tuo colore secondario
+      border-color: $secondary-color;
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 8px; // Posizione precisa
+        top: 4px; // Posizione precisa
+        width: 6px;
+        height: 12px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+}
+.todo-text {
+  color: $quaternary-color;
+  flex: 1;
+  padding: 0.25rem 0;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.todo-edit-btn,
+.todo-delete-btn {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+}
+
+.todo-edit-btn {
+  color: lighten($primary-color, 40%);
+}
+
+.todo-text {
+  &.editing {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    outline: 2px solid rgba(255, 255, 255, 0.3);
+
+    &:focus {
+      outline: 2px solid $secondary-color; // Usa il tuo colore secondario
+    }
+  }
+}
+
+.todo-delete-btn {
+  color: complement($secondary-color); // Crea un contrasto con il verde
+}
+
+.todo-empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+
+  .empty-icon {
+    width: 48px;
+    height: 48px;
+    fill: currentColor;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
+}
+
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.todo-filters {
+  margin-top: 30px;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  color: rgba($quaternary-color, 0.7);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &.active {
+    color: $secondary-color;
+    background: rgba($secondary-color, 0.1);
+    font-weight: 500;
+  }
+
+  &:hover {
+    color: $quaternary-color;
+  }
+}
+
+.clear-completed {
+  background: transparent;
+  border: none;
+  color: rgba($quaternary-color, 0.7);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $quaternary-color;
+    text-decoration: underline;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

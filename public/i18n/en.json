@@ -37,9 +37,27 @@
       "subfeatures": {
         "sub3.1": "Expense splitting among group members.",
         "sub3.2": "Management of debts between members, with automatic calculations to balance accounts."
-      }
+      },
+      "conclusion": "The purpose of Money Tracker is to simplify both individual and shared financial management, making it accessible and visually understandable for everyone."
+    }
+  },
+  "task-manager": {
+    "description": "A Todo component integrated into my personal portfolio, developed with Angular 18 and NgRx to demonstrate advanced state management skills. The goal was to create a modern, reactive interface showcasing seamless integration between UI components and state management.",
+    "new_interface": "I designed a glassmorphism interface that blends perfectly with the portfolio's color palette, with a mobile-first usability focus. Transition animations and visual feedback for actions were optimized for a fluid user experience.",
+    "techs": "Angular 18: Leveraging new features like control flow. NgRx: Implemented with store, actions, and reducers for scalable state management. RxJS: For reactivity and observable handling. SCSS: Using CSS variables for perfect integration with the existing palette.",
+    "features": {
+      "1": "Centralized state architecture: All CRUD operations flow through the NgRx store, demonstrating best practices for complex applications.",
+      "2": "Inline editing: Allows modifying task text directly in the component with blur-triggered autosave.",
+      "3": "Smart filtering: Implemented through memoized selectors to maximize performance.",
+      "4": "Persistence layer: Easily extendable to save state to localStorage or backend."
     },
-    "money-tracker_end": "Lo scopo di Money Tracker è semplificare la gestione finanziaria sia individuale che condivisa, rendendola accessibile e visivamente comprensibile per tutti."
+    "subfeatures": {
+      "sub4.1": "Modular store structure",
+      "sub4.2": "Typed actions with payloads",
+      "sub4.3": "Pure reducers with immutable state management",
+      "sub4.4": "Efficient selectors for deriving complex data"
+    },
+    "conclusion": "This component demonstrates how NgRx can simplify state management even in medium-sized projects, offering powerful debugging tools (Redux DevTools) and a solid foundation for future extensions. The Angular 18 integration showcases a modern approach to reactive programming."
   },
 
   "footer": {
@@ -54,5 +72,45 @@
     "privacy1": "I accept the terms and",
     "privacy2": " conditions (GDPR)",
     "privacy3": "and to be contacted by Lorenzo Baratti or his assistants."
+  },
+  "services": {
+    "title": "Services - Websites for Artisans and Small Businesses",
+    "description": "Are you an artisan or a small business owner? I help you build your online presence with a custom website, easy to manage and optimized to attract new clients.",
+    "benefits": {
+      "title": "Vantages",
+      "visibility": "Increase your visibility",
+      "visibility1": " on Google and social media",
+      "professional": "Give a professional image",
+      "professional1": " to your work",
+      "contact": "Make it easier for new clients to contact you through forms and chat",
+      "contact1": " through forms and chat",
+      "responsive": "Works on all devices (mobile, tablet, PC)",
+      "responsive1": " (mobile, tablet, PC)"
+    },
+    "packages": {
+      "title": "Packages and Prices",
+      "basic": {
+        "title": "Basic Package",
+        "price": "€300",
+        "features": {
+          "1": "Showcase website (Home, About Us, Contacts)",
+          "2": "Responsive design (adaptable to smartphones and tablets)",
+          "3": "Contact form",
+          "4": "Basic SEO optimization",
+          "5": "Delivery time: 1-2 weeks"
+        }
+      },
+      "advanced": {
+        "title": "Advanced Package",
+        "price": "€600",
+        "features": {
+          "1": "Everything in the Basic Package +",
+          "2": "Blog or product catalog",
+          "3": "Integration with Firebase for data management",
+          "4": "SEO and speed improvements",
+          "5": "Delivery time: 2-4 weeks"
+        }
+      }
+    }
   }
 }
