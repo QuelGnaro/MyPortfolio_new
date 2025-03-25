@@ -15,6 +15,7 @@ export class NavbarComponent {
     { link: '#projects', name: ' Projects' },
     { link: '#experience', name: ' My Experience' },
     { link: '#skills', name: ' Skills' },
+    { link: 'services', name: ' Services' },
     { link: '#contactForm', name: ' Contact Me' }
   ];
 

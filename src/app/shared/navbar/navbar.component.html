@@ -46,6 +46,7 @@
             class="nav-item m-1 custom-item"
             *ngFor="let item of sections"
             (click)="navigateTo(item.link)"
+            data-bs-dismiss="offcanvas"
           >
             <a
               aria-current="page"
